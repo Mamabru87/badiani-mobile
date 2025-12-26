@@ -3989,25 +3989,21 @@ button,
   }
 
   .card-modal {
-    grid-template-columns: 1fr;
-    /* On mobile, avoid `auto auto 1fr` which can collapse the last track to 0
-       when the sidebar content is tall. Use a single scroll container instead. */
-    grid-template-rows: auto 1fr; /* Header + Content */
-
+    display: flex !important; /* Use flex column instead of grid for robust stacking */
+    flex-direction: column !important;
     width: 100%;
     height: 100dvh;
     max-height: 100dvh;
-    border-radius: 0; /* Full screen feel */
+    border-radius: 0;
     border: none;
-    margin: 0; /* Reset margins to prevent cutoff */
-
-    /* Single scroll area for the whole modal (prevents “only sidebar visible”). */
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    overflow-y: auto;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Main scroll container */
     -webkit-overflow-scrolling: touch;
   }
 
 .card-modal-header {
+  flex: 0 0 auto; /* Don't shrink */
   padding: 14px 16px;
   gap: 12px;
   position: sticky;
@@ -4016,7 +4012,7 @@ button,
   background: var(--paper);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 10px rgba(15, 33, 84, 0.05);
-  width: 100%; /* Ensure header fits */
+  width: 100%;
 }
 
 @media (max-width: 600px) {
@@ -4024,6 +4020,7 @@ button,
     padding: 10px 12px;
     gap: 8px;
   }
+  /* ... existing inner styles ... */
   .card-modal-crystals {
     padding: 4px 10px;
     gap: 4px;
@@ -4049,27 +4046,29 @@ button,
   }
 
   .card-modal-sidebar {
-    padding: 16px;
-    gap: 14px;
-    /* Let the modal be the scroller on mobile; avoid nested scroll traps. */
+    flex: 0 0 auto; /* Let it grow to fit content */
+    padding: 20px 16px; /* More breathing room */
+    gap: 20px;
     overflow: visible !important;
     background: transparent;
-    border-bottom: none;
-    width: 100%; /* Ensure full width */
+    border-bottom: 1px solid var(--border); /* Visual separation */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .card-modal-body {
-    padding: 0 16px 16px 16px;
+    flex: 1 0 auto; /* Allow it to grow */
+    padding: 20px 16px;
     gap: 14px;
     font-size: 15px;
     line-height: 1.6;
-    /* Let the modal be the scroller on mobile; avoid nested scroll traps. */
     overflow: visible !important;
-    width: 100%; /* Ensure full width */
+    width: 100%;
   }
 
   .card-modal-scroll-spacer {
-    height: 80px; /* Reduced spacer */
+    height: 80px;
   }
 }
 
@@ -4085,28 +4084,30 @@ button,
 }
 
 .modal-product-image {
-  margin: 0 auto !important; /* Center horizontally */
-  padding: 0 !important; /* Remove padding to let image fill */
-  aspect-ratio: auto !important; /* Remove forced aspect ratio */
-  min-height: 0 !important; /* Remove forced min-height */
+  margin: 0 auto 24px auto !important; /* Center + Bottom spacing for separation */
+  padding: 0 !important;
+  aspect-ratio: auto !important;
+  min-height: 0 !important;
   height: auto !important;
-  max-height: 300px !important; /* Limit height on mobile */
+  max-height: 350px !important; /* Slightly taller max */
   width: 100% !important;
   max-width: 100% !important;
   display: block !important;
-  overflow: hidden !important;
+  overflow: visible !important; /* Allow shadows */
   border-radius: var(--radius-lg) !important;
-  background: transparent; /* Remove background */
-  box-shadow: none; /* Remove shadow for cleaner look */
+  background: transparent;
+  box-shadow: none;
 }
 
 .modal-product-image img {
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Ensure image is fully visible and not cropped */
-  max-height: 300px; /* Match container max-height */
+  height: auto; /* Natural height */
+  object-fit: contain;
+  max-height: 350px;
   display: block;
   margin: 0 auto;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08); /* Subtle shadow for depth */
 }
 
 @media (max-width: 600px) {
