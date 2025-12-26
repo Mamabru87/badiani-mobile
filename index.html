@@ -11,55 +11,174 @@
     <script defer src="scripts/site.js?v=20251226_4"></script>
   <!-- COCKPIT_COMPACT_START -->
 <style id="cockpit-compact">
-  /* Riduce l'altezza del modulo Orbit Cockpit (tab/carousel) e rimuove vuoti interni. */
-
-  /* Non stirare la hero */
-  .hero.hero--orbit { align-items: start !important; min-height: unset !important; }
-  .hero.hero--orbit .hero-focus { align-self: start !important; }
-
-  /* Contenitore cockpit: non deve occupare 80-100vh */
-  .hero-aside .summary.summary--compact,
-  .hero-aside .summary[data-carousel="cockpit"] {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  /* Track e item: altezza a contenuto */
-  .hero-aside .cockpit-track,
-  .hero-aside [data-carousel-track],
-  .hero-aside [data-carousel-item] {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-
-  /* Card: elimina distribuzioni che creano grandi buchi */
-  .hero-aside .summary-card {
-    height: auto !important;
-    min-height: 0 !important;
-    align-content: start !important;
-    justify-content: flex-start !important;
-  }
-
-  /* Se la card usa un wrapper interno con altezza forzata, neutralizzalo */
-  .hero-aside .summary-card > * { min-height: 0 !important; }
-
-  /* Desktop: mantieni il cockpit compatto e scrolla se serve */
-  @media (min-width: 980px) {
-    .hero-aside .summary.summary--compact,
-    .hero-aside .summary[data-carousel="cockpit"] {
-      max-height: 520px !important;
-      overflow: hidden !important;
+  /* Mobile Dashboard Optimization: "Smart Widget" Layout */
+  @media (max-width: 860px) {
+    /* 1. Viewport Lock */
+    html, body.page-home {
+      height: 100%;
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+    }
+    body.page-home {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 0 !important;
+      background: #f4f5f7 !important;
     }
 
-    .hero-aside .summary-card {
-      max-height: 440px !important;
-      overflow: auto !important;
+    /* 2. Nav: Ultra Compact */
+    .nav-shell {
+      flex: 0 0 auto;
+      padding: 8px 12px !important;
+      background: #fff !important;
+      border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+      z-index: 10;
     }
-  }
+    .brand-avatar { width: 28px !important; height: 28px !important; }
+    .brand-text small { font-size: 11px !important; }
+    .menu-trigger { font-size: 11px !important; padding: 4px 8px !important; }
 
-  /* Micro: riduci padding verticali che fanno percepire vuoto */
-  .hero-aside .summary-head { margin-bottom: 10px !important; }
-  .hero-aside .summary-card { padding-block: 16px !important; }
+    /* 3. Main Layout */
+    .page-home main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 !important;
+      overflow: hidden;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* 4. Hero: Compact Header */
+    .hero.hero--orbit {
+      flex: 0 0 auto;
+      padding: 12px 16px 8px 16px !important;
+      background: #fff !important;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+      margin: 0 !important;
+      gap: 4px !important;
+    }
+    .hero-focus { padding: 0 !important; border: none !important; box-shadow: none !important; }
+    .hero-eyebrow { font-size: 10px !important; text-transform: uppercase; letter-spacing: 1px; opacity: 0.5; margin-bottom: 2px !important; }
+    .hero h1 { font-size: 20px !important; margin-bottom: 4px !important; letter-spacing: -0.5px; line-height: 1.1 !important; }
+    .hero-lede { font-size: 12px !important; line-height: 1.3 !important; opacity: 0.7; margin-bottom: 8px !important; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .hero-actions { gap: 8px !important; margin: 0 !important; }
+    .hero-actions .btn { height: 28px !important; font-size: 11px !important; padding: 0 12px !important; border-radius: 14px !important; }
+    .hero-pills, .badge { display: none !important; }
+
+    /* 5. Widget Strip (Carousel Reinvented) */
+    .hero-aside {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: transparent !important;
+      padding: 12px 0 !important;
+      overflow: hidden;
+      margin: 0 !important;
+      max-width: none !important;
+    }
+    
+    .summary[data-carousel="cockpit"] {
+      height: 100% !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      margin: 0 !important;
+    }
+    .summary-head { display: none !important; }
+
+    .cockpit-track {
+      display: flex !important;
+      flex-direction: row !important;
+      padding: 0 16px !important;
+      gap: 12px !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory;
+      height: 100% !important;
+      align-items: flex-start !important;
+      scrollbar-width: none;
+    }
+    .cockpit-track::-webkit-scrollbar { display: none; }
+
+    /* 6. The Smart Widgets */
+    .summary-card {
+      flex: 0 0 260px !important; /* Narrower to show more context */
+      width: 260px !important;
+      background: #fff !important;
+      border-radius: 16px !important;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+      border: 1px solid rgba(0,0,0,0.04) !important;
+      padding: 12px !important;
+      scroll-snap-align: center;
+      display: flex !important;
+      flex-direction: column !important;
+      margin: 0 !important;
+      height: auto !important;
+      min-height: 140px !important;
+    }
+
+    /* Widget Header */
+    .summary-card__header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      margin-bottom: 8px !important;
+      border: none !important;
+      padding: 0 !important;
+    }
+    .summary-card__eyebrow { font-size: 10px !important; font-weight: 700 !important; color: var(--brand-blue); opacity: 1 !important; margin: 0 !important; }
+    .pill { font-size: 9px !important; padding: 2px 6px !important; height: auto !important; min-height: 0 !important; }
+    .summary-card__title { display: none !important; }
+
+    /* Widget Content */
+    .summary-stats {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
+      margin-top: auto !important;
+    }
+    
+    /* Totals: 3 cols */
+    .summary-card--totals .summary-stats {
+       grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .stat {
+      background: #f8f9fa !important;
+      border-radius: 8px !important;
+      padding: 6px 4px !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0px;
+    }
+    .stat-label { font-size: 8px !important; text-align: center; line-height: 1.1; opacity: 0.6; }
+    .stat-value { font-size: 14px !important; font-weight: 700 !important; color: var(--brand-blue-deep); }
+
+    /* Daily Question Widget */
+    .summary-card--daily .summary-card__question {
+      font-size: 12px !important;
+      line-height: 1.3;
+      margin-bottom: 8px;
+      font-weight: 500;
+      background: rgba(242, 190, 88, 0.1);
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .summary-card__hint { font-size: 9px !important; opacity: 0.6; }
+    
+    /* Profile Widget */
+    .profile-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; }
+    .profile-actions .btn { width: 100%; font-size: 10px !important; padding: 4px !important; justify-content: center; height: 24px !important; }
+    
+    /* Lists (Wrong/History) */
+    .summary-list { font-size: 11px !important; padding-left: 14px !important; margin-bottom: 0 !important; }
+    .summary-list li { margin-bottom: 4px !important; }
+    .summary-list li.empty { list-style: none; padding-left: 0; opacity: 0.6; font-style: italic; }
+  }
 </style>
 <!-- COCKPIT_COMPACT_END -->
 </head>
@@ -123,7 +242,6 @@
           </p>
           <div class="hero-actions">
             <button class="btn btn-primary" type="button" data-menu-toggle aria-controls="nav-panel">Apri categorie</button>
-            <a class="btn btn-ghost" href="story-orbit.html">Story Orbit</a>
             <button class="btn btn-ghost" type="button" data-info-launch>Regolamento</button>
           </div>
           <div class="pill-row hero-pills">
@@ -206,6 +324,28 @@
                 </div>
               </article>
 
+              <article class="summary-card summary-card--wrong" data-carousel-item>
+                <div class="summary-card__header">
+                  <p class="summary-card__eyebrow">Errori recenti</p>
+                  <span class="pill pill--soft">Ultimi 10</span>
+                </div>
+                <h3 class="summary-card__title">Errori recenti</h3>
+                <ul class="summary-list" data-wrong-list>
+                  <li class="empty">Nessun errore recente — continua così! ✨</li>
+                </ul>
+              </article>
+
+              <article class="summary-card summary-card--history" data-carousel-item>
+                <div class="summary-card__header">
+                  <p class="summary-card__eyebrow">Storico giorni</p>
+                  <span class="pill pill--soft">14 giorni</span>
+                </div>
+                <h3 class="summary-card__title">Storico giorni</h3>
+                <ul class="summary-list" data-history-days>
+                  <li class="empty">Nessuna cronologia disponibile ancora.</li>
+                </ul>
+              </article>
+
               <article class="summary-card summary-card--profile" data-carousel-item>
                 <div class="summary-card__header">
                   <p class="summary-card__eyebrow">Profilo</p>
@@ -228,28 +368,6 @@
                     <button class="btn btn-ghost" type="button" data-profile-switch>Cambia profilo</button>
                   </div>
                 </div>
-              </article>
-
-              <article class="summary-card summary-card--wrong" data-carousel-item>
-                <div class="summary-card__header">
-                  <p class="summary-card__eyebrow">Errori recenti</p>
-                  <span class="pill pill--soft">Ultimi 10</span>
-                </div>
-                <h3 class="summary-card__title">Errori recenti</h3>
-                <ul class="summary-list" data-wrong-list>
-                  <li class="empty">Nessun errore recente — continua così! ✨</li>
-                </ul>
-              </article>
-
-              <article class="summary-card summary-card--history" data-carousel-item>
-                <div class="summary-card__header">
-                  <p class="summary-card__eyebrow">Storico giorni</p>
-                  <span class="pill pill--soft">14 giorni</span>
-                </div>
-                <h3 class="summary-card__title">Storico giorni</h3>
-                <ul class="summary-list" data-history-days>
-                  <li class="empty">Nessuna cronologia disponibile ancora.</li>
-                </ul>
               </article>
             </div>
           </section>
