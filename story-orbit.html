@@ -1,0 +1,776 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Orbit · Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+    <style>
+      /* Story Accordion - Modern Expanding Cards */
+      .story-experience--accordion {
+        display: grid;
+        grid-template-columns: minmax(300px, 1fr) minmax(340px, 1.2fr);
+        gap: clamp(20px, 3vw, 40px);
+        padding: clamp(20px, 3vw, 32px);
+        background: #ffffff;
+        border: 1px solid rgba(33, 64, 152, 0.08);
+        border-radius: var(--radius-xl, 34px);
+        align-items: start;
+      }
+      
+      @media (max-width: 900px) {
+        .story-experience--accordion {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      .story-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .story-card {
+        position: relative;
+        background: #ffffff;
+        border: 1px solid rgba(33, 64, 152, 0.12);
+        border-radius: var(--radius-lg, 24px);
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 20px rgba(15, 33, 84, 0.06);
+      }
+      
+      .story-card:hover {
+        border-color: rgba(33, 64, 152, 0.2);
+        box-shadow: 0 8px 32px rgba(15, 33, 84, 0.1);
+      }
+      
+      .story-card.is-active {
+        border-color: var(--card-accent, var(--brand-gold, #f2be58));
+        box-shadow: 0 12px 48px rgba(15, 33, 84, 0.15);
+        transform: scale(1.01);
+      }
+      
+      .story-card__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-family: inherit;
+        transition: background 0.25s ease;
+      }
+      
+      .story-card__header:hover {
+        background: rgba(33, 64, 152, 0.03);
+      }
+      
+      .story-card.is-active .story-card__header {
+        background: linear-gradient(135deg, rgba(33, 64, 152, 0.04), rgba(33, 64, 152, 0.01));
+      }
+      
+      .story-card__icon {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        background: rgba(33, 64, 152, 0.06);
+        border-radius: 12px;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .story-card.is-active .story-card__icon {
+        background: var(--card-accent, var(--brand-gold, #f2be58));
+        transform: scale(1.1) rotate(-5deg);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      }
+      
+      .story-card__title {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      
+      .story-card__title .node-label {
+        font-family: var(--font-medium, inherit);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ink, #214098);
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+      
+      .story-card__title small {
+        font-size: 13px;
+        color: var(--ink-soft, #4f515e);
+        letter-spacing: 0.04em;
+      }
+      
+      .story-card__arrow {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(33, 64, 152, 0.06);
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        color: var(--ink, #214098);
+      }
+      
+      .story-card.is-active .story-card__arrow {
+        background: var(--card-accent, var(--brand-gold, #f2be58));
+        transform: rotate(180deg);
+        color: #ffffff;
+      }
+      
+      .story-card__body {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+      }
+      
+      .story-card.is-active .story-card__body {
+        grid-template-rows: 1fr;
+      }
+      
+      .story-card__content {
+        min-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s, padding 0.35s ease;
+      }
+      
+      .story-card.is-active .story-card__content {
+        padding: 0 20px 24px;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .story-card__content .story-eyebrow {
+        display: inline-block;
+        padding: 6px 14px;
+        background: linear-gradient(135deg, var(--card-accent, var(--brand-gold)), rgba(33, 64, 152, 0.1));
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border-radius: 20px;
+        margin-bottom: 14px;
+      }
+      
+      .story-card__content h3 {
+        font-size: 20px;
+        color: var(--ink, #214098);
+        margin-bottom: 14px;
+        font-weight: 600;
+      }
+      
+      .story-card__content .story-highlights {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .story-card__content .story-highlights li {
+        position: relative;
+        padding-left: 20px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--ink-soft, #4f515e);
+      }
+      
+      .story-card__content .story-highlights li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: var(--card-accent, var(--brand-gold));
+        border-radius: 50%;
+        opacity: 0.8;
+      }
+      
+      .story-card__content .story-cta {
+        background: rgba(33, 64, 152, 0.03);
+        border-radius: 16px;
+        padding: 18px;
+        margin-bottom: 14px;
+        border-left: 4px solid var(--card-accent, var(--brand-gold));
+      }
+      
+      .story-card__content .story-cta strong {
+        display: block;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink, #214098);
+        margin-bottom: 8px;
+      }
+      
+      .story-card__content .story-cta p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--ink-soft, #4f515e);
+        margin-bottom: 12px;
+      }
+      
+      .story-card__content .story-tags {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      
+      .story-card__content .story-tags li {
+        padding: 6px 12px;
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(33, 64, 152, 0.1);
+        border-radius: 20px;
+        font-size: 12px;
+        color: var(--ink, #214098);
+        letter-spacing: 0.03em;
+      }
+      
+      .story-card__content .story-meta {
+        display: flex;
+        gap: 12px;
+      }
+      
+      .story-card__content .story-meta span {
+        padding: 8px 16px;
+        background: linear-gradient(135deg, var(--card-accent, var(--brand-gold)), rgba(33, 64, 152, 0.2));
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+      
+      /* Story Media in accordion mode */
+      .story-experience--accordion .story-media {
+        position: sticky;
+        top: 20px;
+        aspect-ratio: 4/3;
+        border-radius: var(--radius-xl, 34px);
+        overflow: hidden;
+        background: #f8f9fc;
+        border: 1px solid rgba(33, 64, 152, 0.08);
+      }
+      
+      .story-experience--accordion .story-image {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transform: scale(1.05);
+        transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+      }
+      
+      .story-experience--accordion .story-image.is-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+      
+      .story-experience--accordion .story-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      
+      .story-experience--accordion .story-zoom-hint {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 16px;
+        background: rgba(33, 64, 152, 0.9);
+        color: #fff;
+        font-size: 12px;
+        border-radius: 24px;
+        letter-spacing: 0.05em;
+        backdrop-filter: blur(8px);
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+      }
+      
+      .story-experience--accordion .story-media:hover .story-zoom-hint {
+        opacity: 1;
+      }
+      
+      /* Entrance animation for cards */
+      .story-card {
+        animation: cardSlideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+      }
+      .story-card:nth-child(1) { animation-delay: 0.1s; }
+      .story-card:nth-child(2) { animation-delay: 0.2s; }
+      .story-card:nth-child(3) { animation-delay: 0.3s; }
+      .story-card:nth-child(4) { animation-delay: 0.4s; }
+      
+      @keyframes cardSlideIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* Pulse effect on active card */
+      .story-card.is-active::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        background: linear-gradient(135deg, var(--card-accent, var(--brand-gold)), transparent);
+        opacity: 0.15;
+        z-index: -1;
+        animation: pulseGlow 2s ease-in-out infinite;
+      }
+      
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.1; transform: scale(1); }
+        50% { opacity: 0.2; transform: scale(1.01); }
+      }
+    </style>
+  </head>
+  <body data-product="story-orbit">
+    <main>
+      <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="menu-panel" id="nav-panel" data-menu-panel>
+          <div class="menu-panel__inner">
+            <div class="menu-panel__glow"></div>
+            <div class="menu-cluster">
+              <p class="menu-label">Orbit</p>
+              <a href="index.html">Hub</a>
+              <a href="story-orbit.html" aria-current="page">Story Orbit</a>
+            </div>
+            <div class="menu-cluster">
+              <p class="menu-label">Beverage &amp; Treats</p>
+              <a href="caffe.html">Caffè Rituals</a>
+              <a href="sweet-treats.html">Sweet Treat Atelier</a>
+              <a href="pastries.html">Pastry Lab</a>
+            </div>
+            <div class="menu-cluster">
+              <p class="menu-label">Gelato &amp; Speciali</p>
+              <a href="slitti-yoyo.html">Slitti &amp; Yo-Yo</a>
+              <a href="gelato-lab.html">Gelato Lab</a>
+              <a href="festive.html">Festive</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffè Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti &amp; Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive &amp; Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+      <section class="hero">
+        <div class="hero-card pattern-shell pattern-script-inverse">
+          <div class="badge">
+            <span>Brand Book · Heritage</span>
+            <span class="page-stars" data-page-stars>⭐ Stelle: 0/5</span>
+          </div>
+          <h1>Story Orbit Badiani 1932</h1>
+          <p>
+            Timeline immersiva per raccontare origine, cultura del Buontalenti e promessa di marca. Materiale estratto dal Brand Book
+            ufficiale con immagini leggibili, citazioni e rituali da usare nei training.
+          </p>
+          <div class="pill-row">
+            <span class="pill">History</span>
+            <span class="pill">Gelato culture</span>
+            <span class="pill">Brand promise</span>
+          </div>
+          
+        </div>
+        <div class="hero-card visual">
+          <div class="story-collage">
+            <img src="assets/story/story-tradizione.webp" alt="Pagina tradizione Badiani" loading="lazy" />
+            <img src="assets/story/story-idea.webp" alt="Pagina idea Badiani" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section class="story-experience story-experience--accordion">
+        <div class="story-media" data-story-fullscreen tabindex="0" aria-label="Apri pagina story a schermo intero">
+          <div class="story-image" data-story-image="tradizione">
+            <img src="assets/story/story-tradizione.webp" alt="Pagina tradizione Badiani" loading="lazy" />
+          </div>
+          <div class="story-image" data-story-image="idea">
+            <img src="assets/story/story-idea.webp" alt="Pagina idea Badiani" loading="lazy" />
+          </div>
+          <div class="story-image" data-story-image="gelato">
+            <img src="assets/story/story-gelato.webp" alt="Pagina cultura del gelato Buontalenti" loading="lazy" />
+          </div>
+          <div class="story-image" data-story-image="buontalenti">
+            <img src="assets/story/story-buontalenti.webp" alt="Pagina Buontalenti signature" loading="lazy" />
+          </div>
+          <div class="story-halo"></div>
+          <div class="story-zoom-hint">Click per ingrandire</div>
+        </div>
+
+        <div class="story-accordion">
+          <!-- Tab 1: Tradizione -->
+          <div class="story-card" data-story-card="tradizione" style="--card-accent: #f2be58;">
+            <button class="story-card__header" type="button" data-story-target="tradizione" aria-expanded="false">
+              <div class="story-card__icon">🏛️</div>
+              <div class="story-card__title">
+                <span class="node-label">Tradizione</span>
+                <small>Origini 1932 · Firenze</small>
+              </div>
+              <div class="story-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </button>
+            <div class="story-card__body">
+              <div class="story-card__content">
+                <span class="story-eyebrow">Heritage</span>
+                <h3>Tradizione fiorentina</h3>
+                <ul class="story-highlights">
+                  <li>Origini 1932: gelateria artigianale nel cuore di Firenze.</li>
+                  <li>Stile italiano: eleganza, accoglienza, cura del dettaglio.</li>
+                  <li>Storia di famiglia: passaggi generazionali e know-how.</li>
+                </ul>
+                <div class="story-cta">
+                  <strong>Pitch da 20 secondi</strong>
+                  <p>"Firenze nel cono, ogni giorno": racconta che la stessa mano artigianale del 1932 vive in ogni laboratorio Badiani.</p>
+                  <ul class="story-tags">
+                    <li>Cartolina dal Piazzale</li>
+                    <li>Accoglienza boutique</li>
+                    <li>Passaggi generazionali</li>
+                  </ul>
+                </div>
+                <div class="story-meta">
+                  <span>Firenze</span>
+                  <span>1932</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Idea Badiani -->
+          <div class="story-card" data-story-card="idea" style="--card-accent: #ec418c;">
+            <button class="story-card__header" type="button" data-story-target="idea" aria-expanded="false">
+              <div class="story-card__icon">💡</div>
+              <div class="story-card__title">
+                <span class="node-label">Idea Badiani</span>
+                <small>Visione e filosofia</small>
+              </div>
+              <div class="story-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </button>
+            <div class="story-card__body">
+              <div class="story-card__content">
+                <span class="story-eyebrow">Visione</span>
+                <h3>Idea Badiani</h3>
+                <ul class="story-highlights">
+                  <li>Innovazione continua su gusti e rituali di servizio.</li>
+                  <li>Esperienza boutique: qualità percepita in ogni touchpoint.</li>
+                  <li>Team training: storytelling coerente con la brand promise.</li>
+                </ul>
+                <div class="story-cta">
+                  <strong>Mantra da banco</strong>
+                  <p>"Nuovo e fedele": ogni novità preserva l'equilibrio e la gentilezza del gesto italiano.</p>
+                  <ul class="story-tags">
+                    <li>Brand promise</li>
+                    <li>Tono caldo, sicuro</li>
+                    <li>Curiosità sul menù</li>
+                  </ul>
+                </div>
+                <div class="story-meta">
+                  <span>Brand book</span>
+                  <span>Vision</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Cultura Gelato -->
+          <div class="story-card" data-story-card="gelato" style="--card-accent: #214098;">
+            <button class="story-card__header" type="button" data-story-target="gelato" aria-expanded="false">
+              <div class="story-card__icon">🍨</div>
+              <div class="story-card__title">
+                <span class="node-label">Cultura Gelato</span>
+                <small>Buontalenti &amp; spatolatura</small>
+              </div>
+              <div class="story-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </button>
+            <div class="story-card__body">
+              <div class="story-card__content">
+                <span class="story-eyebrow">Gelato</span>
+                <h3>Cultura del gelato</h3>
+                <ul class="story-highlights">
+                  <li>Buontalenti: crema iconica, texture setosa e spatolatura morbida.</li>
+                  <li>Ingredienti: latte fresco, panna, tuorlo, zucchero bilanciato.</li>
+                  <li>Rituale: primo assaggio consigliato per educare il palato.</li>
+                </ul>
+                <div class="story-cta">
+                  <strong>Rituale di degustazione</strong>
+                  <p>Offri un micro-assaggio di Buontalenti prima di ogni scelta e spiega che la spatola serve a tenere l'aria fuori e la cremosità dentro.</p>
+                  <ul class="story-tags">
+                    <li>Prima cucchiaiata guidata</li>
+                    <li>Texture seta</li>
+                    <li>Voce da laboratorio</li>
+                  </ul>
+                </div>
+                <div class="story-meta">
+                  <span>Buontalenti</span>
+                  <span>Signature</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Buontalenti -->
+          <div class="story-card" data-story-card="buontalenti" style="--card-accent: #0f2154;">
+            <button class="story-card__header" type="button" data-story-target="buontalenti" aria-expanded="false">
+              <div class="story-card__icon">⭐</div>
+              <div class="story-card__title">
+                <span class="node-label">Buontalenti</span>
+                <small>Signature hero</small>
+              </div>
+              <div class="story-card__arrow">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </button>
+            <div class="story-card__body">
+              <div class="story-card__content">
+                <span class="story-eyebrow">Iconic</span>
+                <h3>Buontalenti signature</h3>
+                <ul class="story-highlights">
+                  <li>Il nostro eroe: crema inventata a Firenze, simbolo del brand.</li>
+                  <li>Racconto al banco: invita all'assaggio e spiega la spatolatura.</li>
+                  <li>Pairing: affogato, coppetta con topping caldo, degustazione guidata.</li>
+                </ul>
+                <div class="story-cta">
+                  <strong>Hero moment</strong>
+                  <p>Firma l'ordine con un suggerimento: "Provi il Buontalenti con una colata di cioccolato Slitti o in affogato?"</p>
+                  <ul class="story-tags">
+                    <li>Signature tasting</li>
+                    <li>Assaggio guidato</li>
+                    <li>Pairing caldo/freddo</li>
+                  </ul>
+                </div>
+                <div class="story-meta">
+                  <span>Signature</span>
+                  <span>Experience</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">📖</div>
+        <h3 class="footer-title">Story Orbit</h3>
+        <p class="footer-tagline">Heritage Badiani 1932</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">4 Moduli</span>
+            <span class="stat-label">Moduli</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Brand Story</span>
+            <span class="stat-label">Brand Story</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Firenze Origine</span>
+            <span class="stat-label">Origine</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+    
+    <div class="story-modal" data-story-modal aria-hidden="true">
+      <div class="story-modal__content" role="dialog" aria-modal="true" aria-label="Story orbit fullscreen">
+        <button class="story-modal__close" type="button" aria-label="Chiudi visualizzazione" data-story-modal-close>×</button>
+        <figure>
+          <img src="" alt="" data-story-modal-image />
+          <figcaption data-story-modal-caption></figcaption>
+        </figure>
+      </div>
+    </div>
+    
+    <script>
+    // Story Orbit Accordion - Expanding Cards
+    (function() {
+      var cards = document.querySelectorAll('.story-card');
+      var images = document.querySelectorAll('[data-story-image]');
+      var currentActive = null;
+      
+      if (!cards.length) return;
+      
+      function activate(id) {
+        // Close all cards
+        cards.forEach(function(card) {
+          var cardId = card.dataset.storyCard;
+          var isTarget = cardId === id;
+          var header = card.querySelector('.story-card__header');
+          
+          if (isTarget && currentActive !== id) {
+            // Open this card
+            card.classList.add('is-active');
+            if (header) header.setAttribute('aria-expanded', 'true');
+            currentActive = id;
+          } else if (isTarget && currentActive === id) {
+            // Toggle off if clicking same card
+            card.classList.remove('is-active');
+            if (header) header.setAttribute('aria-expanded', 'false');
+            currentActive = null;
+          } else {
+            // Close other cards
+            card.classList.remove('is-active');
+            if (header) header.setAttribute('aria-expanded', 'false');
+          }
+        });
+        
+        // Update images - show if card is open, hide all if no card open
+        images.forEach(function(img) {
+          var imgId = img.dataset.storyImage;
+          img.classList.toggle('is-active', imgId === currentActive);
+        });
+      }
+      
+      // Bind click events
+      cards.forEach(function(card) {
+        var header = card.querySelector('.story-card__header');
+        var cardId = card.dataset.storyCard;
+        
+        if (header) {
+          header.onclick = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            activate(cardId);
+          };
+        }
+      });
+      
+      // Fullscreen modal for images
+      var storyMedia = document.querySelector('[data-story-fullscreen]');
+      var storyModal = document.querySelector('[data-story-modal]');
+      
+      if (storyMedia && storyModal) {
+        var modalImage = storyModal.querySelector('[data-story-modal-image]');
+        var modalCaption = storyModal.querySelector('[data-story-modal-caption]');
+        var closeButtons = storyModal.querySelectorAll('[data-story-modal-close]');
+        
+        storyMedia.onclick = function() {
+          var activeImage = document.querySelector('.story-image.is-active img');
+          if (!activeImage) return;
+          
+          modalImage.src = activeImage.src;
+          modalImage.alt = activeImage.alt;
+          modalCaption.textContent = activeImage.alt || '';
+          storyModal.classList.add('is-visible');
+          storyModal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        };
+        
+        function closeModal() {
+          storyModal.classList.remove('is-visible');
+          storyModal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+          setTimeout(function() { modalImage.src = ''; }, 150);
+        }
+        
+        closeButtons.forEach(function(btn) {
+          btn.onclick = closeModal;
+        });
+        
+        storyModal.onclick = function(e) {
+          if (e.target === storyModal) closeModal();
+        };
+        
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && storyModal.classList.contains('is-visible')) {
+            closeModal();
+          }
+        });
+      }
+    })();
+    </script>
+  </body>
+</html>

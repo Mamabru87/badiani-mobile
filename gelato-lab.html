@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gelato Lab - Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+  </head>
+  <body data-product="gelato-lab">
+    <main>
+      <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffè Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti & Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive & Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content-area">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="badge">
+            <span>Linea gelato</span>
+            <span class="page-stars" data-page-stars>? Stelle: 8/8</span>
+          </div>
+          <h1>Gelato Lab</h1>
+          <p>
+            Manuale per il banco gelato: porzioni, servizio take me home, coppe scenografiche e manutenzione della vetrina
+            a -14/-15 °C.
+          </p>
+          
+        </div>
+        <div class="hero-card visual">
+          <picture>
+            <source srcset="assets/gelato-cover.webp" type="image/webp" />
+            <img src="assets/gelato-cover.webp" alt="Cup gelato Badiani" loading="lazy" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="carousel" data-carousel="gelato-lab">
+        <header class="carousel-header" data-carousel-header>
+          <div class="carousel-header__title-block">
+            <h2 class="carousel-title" data-carousel-title>Gelato Lab</h2>
+            <span class="carousel-category" data-carousel-category>Linea gelato</span>
+          </div>
+          <div class="carousel-indicators" data-carousel-indicators></div>
+        </header>
+
+        <div class="carousel-track" data-carousel-track>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Cups</span>
+              <span class="tag">Piccolo 100g</span>
+            </div>
+            <h3>Coppette</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-cups.webp" type="image/webp" />
+                <img src="assets/gelato-cups.webp" alt="Coppette gelato Badiani" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Coppette in tre misure: Piccolo (1 gusto, 100 g), Medio (1-2 gusti, 140 g), Grande (1-3 gusti, 180 g).
+              La chiave è dosare correttamente il gelato e compattarlo bene per eliminare bolle d'aria e dare una presentazione uniforme.
+            </p>
+            <ul class="stat-list">
+              <li>Pesatura: Piccolo 100-120g, Medio 160-200g, Grande 200-240g (controlla sempre)</li>
+              <li>Tecnica scoop: lineare + ball per look professionale</li>
+              <li>Compattamento: spingi il gelato sul lato della coppetta eliminando aria</li>
+              <li>Ammorbidimento spatola: scaldala passandola sul gelato per facilitare il prelievo</li>
+              <li>Completamento: offri sempre wafer e panna (upselling)</li>
+              <li>Temperatura ideale gelato: -14/-15°C (se più caldo è difficile da dosare)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Scalda spatola passando sul gusto per ammorbidirlo.</span>
+                <span>2 · Spingi gelato sul lato della coppetta eliminando aria.</span>
+                <span>3 · Offri wafer/panna e sorridi.</span>
+              </div>
+              <div class="tips">Bambini possono scegliere due gusti anche sul piccolo.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi passare al medio? Aggiungi un altro gusto e panna"</span>
+                <span><strong>Opzione 2:</strong> "Ti aggiungo panna montata e wafer croccante?"</span>
+                <span><strong>Opzione 3:</strong> "Con salsa al pistacchio diventa ancora più goloso"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Pesa sempre le coppette per rispettare range grammi. Usa tecnica "scoop lineare + ball" per look professionale. Temperatura gelato ideale: -14/-15°C.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Coni</span>
+              <span class="tag">GF & Choco</span>
+            </div>
+            <h3>Coni classici</h3>
+            <figure class="guide-media tall">
+              <picture>
+                <source srcset="assets/gelato-cones.webp" type="image/webp" />
+                <img src="assets/gelato-cones.webp" alt="Coni gelato Badiani" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Coni in tre varianti: Classico (1 gusto), Cioccolato o Gluten Free (1-2 gusti). Ogni cono va avvolto con tissue per grip e presentazione.
+              Mantieni l'area dei coni sempre pulita per evitare contaminazioni di sapori.
+            </p>
+            <ul class="stat-list">
+              <li>Avvolgimento: tissue sempre, per grip e look</li>
+              <li>Dosaggio: 1 ball per cono piccolo, 1-2 ball per coni speciali (choco/GF)</li>
+              <li>Posizionamento: appoggia la ball ruotando il cono per stabilità</li>
+              <li>Pulizia area: ogni 30 minuti elimina briciole (assorbono umidità)</li>
+              <li>Stock rotation: FIFO rigoroso (i coni assorbono umidità, usa quelli meno freschi prima)</li>
+              <li>Upgrade upsell: cono cioccolato (ricoperto dentro e fuori), panna montata</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Avvolgi cono con tissue.</span>
+                <span>2 · Prepara ball e appoggiala ruotando.</span>
+                <span>3 · Proponi upgrade al cono choco o panna montata.</span>
+              </div>
+              <div class="tips">Mantieni l'area dei coni pulita eliminando briciole.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Upgrade al cono cioccolato? è ricoperto dentro e fuori"</span>
+                <span><strong>Opzione 2:</strong> "Cono gluten-free disponibile (se presente)"</span>
+                <span><strong>Opzione 3:</strong> "Vuoi panna montata sopra per look Instagram?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Pulisci area coni ogni 30 minuti per eliminare briciole. Rotazione stock: i coni assorbono umidità, usa FIFO rigoroso. Avvolgi sempre con tissue per grip.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Box</span>
+              <span class="tag">500-1000 ml</span>
+            </div>
+            <h3>Gelato Boxes</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-box.webp" type="image/webp" />
+                <img src="assets/gelato-box.webp" alt="Gelato take me home box" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Gelato da asporto in box termici da 500/750/1000 ml. Ogni box mantiene il gelato al giusto stato per circa 1 ora se messo nella borsa termica.
+              Comunica sempre al cliente di mettere subito in freezer a casa: il gelato cambia di consistenza quando si scongela.
+            </p>
+            <ul class="stat-list">
+              <li>Piccolo: 500 ml (1-3 gusti)</li>
+              <li>Medio: 750 ml (1-4 gusti)</li>
+              <li>Grande: 1000 ml (1-5 gusti)</li>
+              <li>Ordine inserimento: inizia dai gusti più morbidi (sorbet prima) per evitare contaminazione sapori</li>
+              <li>Compattamento: elimina bene le bolle d'aria, pulisci bordi con spatola prima di sigillare</li>
+              <li>Sigillatura: film + nastro Badiani, consegna in borsa termica</li>
+              <li>Autonomia: 1 ora in borsa termica; comunica sempre il freezer a casa per mantenere qualità</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Inserisci gusti iniziando dai più morbidi (sorbet prima per evitare contaminazioni).</span>
+                <span>2 · Compatta eliminando bolle d'aria e pulisci bordi.</span>
+                <span>3 · Sigilla con film + nastro Badiani, consegna in borsa.</span>
+              </div>
+              <div class="tips">Upsell box più grande + pack 10 waffle o coni.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Il box grande da 1L ti fa provare più gusti diversi"</span>
+                <span><strong>Opzione 2:</strong> "Aggiungiamo pack di coni per servire a casa?"</span>
+                <span><strong>Opzione 3:</strong> "Con borsa termica mantieni tutto perfetto fino a 2 ore"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Compatta bene eliminando aria per evitare cristalli. Pulisci bordi prima di sigillare. Autonomia: 1h in borsa termica, comunica sempre al cliente di mettere subito in freezer.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Coppa gelato</span>
+              <span class="tag">Whipped cream</span>
+            </div>
+            <h3>Coppa Gelato</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-coppa.webp" type="image/webp" />
+                <img src="assets/gelato-coppa.webp" alt="Coppa gelato scenografica" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Tre boules di gelato in coppa di vetro, completate con panna montata, una salsa a scelta, mini cono e wafer Badiani.
+              È la proposta “wow”: va costruita con ordine e servita subito per mantenere texture e pulizia del topping.
+            </p>
+            <ul class="stat-list">
+              <li>Base: coppa in vetro</li>
+              <li>Porzione: 3 scoops con scooper tondo (anche 3 gusti diversi)</li>
+              <li>Top: panna montata + swirl di sauce scelta</li>
+              <li>Finitura: mini cono + wafer Badiani</li>
+              <li>Servizio: cucchiaio in acciaio, consegna immediata</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Prendi una coppa di vetro e prepara i gusti con lo scooper tondo: 3 boules regolari (anche di gusti diversi).</span>
+                <span>2 · Completa con panna montata e uno swirl della sauce scelta (senza sporcare i bordi).</span>
+                <span>3 · Aggiungi mini cono + wafer Badiani e servi con cucchiaio in acciaio.</span>
+              </div>
+              <div class="tips">Proponi pairing con Slitti dragée per un dessert completo.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi aggiungere granella di nocciola tostata e dragée Slitti?"</span>
+                <span><strong>Opzione 2:</strong> "Con doppia salsa pistacchio e cioccolato diventa signature"</span>
+                <span><strong>Opzione 3:</strong> "Abbinamento perfetto: Coppa + espresso affogato style"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Usa bicchieri in vetro freddi per mantenere temperatura. Monta boules con scooper tondo per estetica uniforme. Servi immediatamente dopo guarnizione per evitare scioglimento panna.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Display freezer</span>
+              <span class="tag">-14 °C</span>
+            </div>
+            <h3>Gestione treat freezer</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-treats.webp" type="image/webp" />
+                <img src="assets/gelato-treats.webp" alt="Treat freezer Badiani" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Vetrina verticale a -14 °C, defrost weekly, tutto esposto con guanti.</p>
+            <ul class="stat-list">
+              <li>Disporre cakes su shelf alto, cookies/pinguini su quello basso (eye level kids)</li>
+              <li>Shelf life dopo esposizione: cakes/pinguini 35 giorni, mini semifreddi 35, mini cakes 21, mini cones 21, cookies 14</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Tip</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Massimizza spazio, FIFO.</span>
+                <span>2 · Ricorda ai clienti che sono prodotti gelato.</span>
+                <span>3 · Usa box termico (autonomia 1h) per take away.</span>
+              </div>
+              <div class="tips">Pulizia ghiaccio weekly per mantenere visibilità impeccabile.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Tecnica 1:</strong> "Posiziona treats a eye-level bambini per vendite impulse"</span>
+                <span><strong>Tecnica 2:</strong> "Box misto pinguini/cookies per feste (secondo listino locale)"</span>
+                <span><strong>Tecnica 3:</strong> "Mini semifreddi perfetti per dessert last-minute a casa"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Mantieni freezer a -14°C costanti. Rimuovi ghiaccio settimanale con spatola plastica per non graffiare. Usa guanti sempre per manipolazione igienica.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--procedure" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Prep mattino</span>
+              <span class="tag">-14 °C</span>
+            </div>
+            <h3>Routine apertura</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-display.webp" type="image/webp" />
+                <img src="assets/gelato-display.webp" alt="Vetrina gelato pronta" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Detergere vetrina con panno caldo + sanificante giallo, lucidare metalli con blue spray, montare barre e porte.</p>
+            <button class="btn-ghost" data-toggle-card>Checklist</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Netto tutti i residui del giorno precedente.</span>
+                <span>2 · Inserisci vaschette e attiva macchina finché arriva a -14/-15 °C.</span>
+                <span>3 · Recupera scampoli (meno di 1/4 vaschetta) e valuta se usare o sostituire.</span>
+              </div>
+              <div class="tips">Spatole sempre lavate/asciugate tra un gusto e l'altro.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Prep strategica:</strong> "Esponi gusti bestseller in posizione centrale per massimizzare ordini"</span>
+                <span><strong>Sampling:</strong> "Prepara mini assaggi dei gusti premium per aumentare conversione"</span>
+                <span><strong>Visual:</strong> "Superfici lisce e livellate comunicano freschezza e qualità"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Temperatura target: -14/-15°C. Controlla termometro digitale ogni mattina. Attiva macchina 30 min prima apertura. Spatole dedicate per allergeni.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--maintenance" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Weekly</span>
+              <span class="tag">Deep clean</span>
+            </div>
+            <h3>Manutenzione</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-maintenance-tools.webp" type="image/webp" />
+                <img src="assets/gelato-maintenance-tools.webp" alt="Strumenti pulizia gelato" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Spegnere ogni notte, deep clean settimanale (pannelli, filtri, barre, porte scorrevoli).</p>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Rimuovere pannelli e residui con spugna umida.</span>
+                <span>2 · Sanificare superfici + spray blu per lucentezza.</span>
+                <span>3 · Pulire filtri e label holders, riavviare macchina.</span>
+              </div>
+              <div class="tips">Documentare cleaning con foto per audit qualità.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Qualità visibile:</strong> "Vetrina pulita = percezione freschezza = più vendite"</span>
+                <span><strong>Trasparenza:</strong> "Cliente vede pulizia = fiducia = ticket medio più alto"</span>
+                <span><strong>Standard:</strong> "Manutenzione regolare evita breakdown e perdite vendite"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Deep clean settimanale (domenica sera). Usa detergente alimentare certificato. Controlla guarnizioni per usura. Documenta con foto prima/dopo per tracciabilità HACCP.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Scampoli</span>
+              <span class="tag">MAX 5-7 cm</span>
+            </div>
+            <h3>Gestione scampoli</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/gelato-scampoli.webp" type="image/webp" />
+                <img src="assets/gelato-scampoli.webp" alt="Spatola per scampoli gelato" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Quando resta meno di 1/4 vaschetta, travasa progressivamente nel gusto nuovo.</p>
+            <button class="btn-ghost" data-toggle-card>Note</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Preleva 100 g alla volta dal freezer scampoli.</span>
+                <span>2 · Stendi sul nuovo gusto fino a max 5-7 cm.</span>
+                <span>3 · Liscialo per uniformare il look.</span>
+              </div>
+              <div class="tips">Evita di superare la soglia per non compromettere texture/presentazione.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Zero waste:</strong> "Gestione scampoli riduce costi e massimizza profitto"</span>
+                <span><strong>Freschezza:</strong> "Travaso progressivo mantiene tutti gusti disponibili"</span>
+                <span><strong>Presentazione:</strong> "Nessun buco in vetrina = esperienza cliente premium"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Max 5-7 cm di altezza scampoli o texture si compromette. Travasa gusti simili (crema con crema, frutta con frutta). Liscia superficie con spatola per look uniforme.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">🍨</div>
+        <h3 class="footer-title">Gelato Lab</h3>
+        <p class="footer-tagline">Buontalenti e gusti signature</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">8 Prodotti</span>
+            <span class="stat-label">Prodotti</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Listino locale</span>
+            <span class="stat-label">Range</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Mar-Ott Stagione</span>
+            <span class="stat-label">Stagione</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

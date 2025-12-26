@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slitti & Yo-Yo - Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+  </head>
+  <body data-product="slitti-yoyo">
+    <main>
+      <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffè Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti & Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive & Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content-area">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="badge">
+            <span>Cioccolato & snack</span>
+            <span class="page-stars" data-page-stars>? Stelle: 7/7</span>
+          </div>
+          <h1>Slitti & Yo-Yo</h1>
+          <p>
+            Storytelling sul brand toscano Slitti, gamma premium (tavolette, mini cakes, praline, dragée, creme) e la
+            procedura Yo-Yo per servire il biscotto farcito con gelato.
+          </p>
+          
+        </div>
+        <div class="hero-card visual">
+           <picture>
+            <source srcset="assets/slitti-cover.webp" type="image/webp" />
+            <img src="assets/slitti-cover.webp" alt="Prodotti Slitti" loading="lazy" />
+           </picture>
+        </div>
+      </section>
+
+      <section class="carousel" data-carousel="slitti-yoyo">
+        <header class="carousel-header" data-carousel-header>
+          <div class="carousel-header__title-block">
+            <h2 class="carousel-title" data-carousel-title>Slitti & Yo-Yo</h2>
+            <span class="carousel-category" data-carousel-category>Cioccolato & snack</span>
+          </div>
+          <div class="carousel-indicators" data-carousel-indicators></div>
+        </header>
+
+        <div class="carousel-track" data-carousel-track>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Montecatini Terme</span>
+              <span class="tag">Since 1969</span>
+            </div>
+            <h3>Timeline essenziale</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/slitti-timeline.webp" type="image/webp" />
+                <img src="assets/slitti-timeline.webp" alt="Esposizione prodotti Slitti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Luciano Slitti apre come torrefazione nel 1969. Nel 1990 Andrea introduce il cioccolato e, insieme al fratello
+              Daniele, conquista premi internazionali (Grand Prix 1994, Eurochocolate 1996, miglior chocolatier italiano 2008).
+            </p>
+            <button class="btn-ghost" data-toggle-card>Key message</button>
+            <div class="details">
+              <div class="steps">
+                <span>1. Valorizza la selezione rigorosa di materie prime.</span>
+                <span>2. Racconta premi e heritage toscano per giustificare il posizionamento premium.</span>
+                <span>3. Invita il cliente ad assaggiare abbinando caffè o gelato.</span>
+              </div>
+              <div class="tips">Usa la palette blu/pink per creare piccole schede storytelling accanto all'esposizione.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Heritage:</strong> "Dal 1969, Slitti è eccellenza toscana premiata a livello mondiale"</span>
+                <span><strong>Premi:</strong> "Grand Prix 1994, miglior chocolatier italiano 2008 giustificano premium"</span>
+                <span><strong>Pairing:</strong> "Ogni prodotto si abbina perfetto con espresso o gelato Badiani"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Crea mini card storytelling con palette brand per esporre accanto prodotti. Racconta sempre origine e premi per giustificare prezzo premium. Invita assaggi guidati.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Tavolette</span>
+              <span class="tag">Gran Cacao</span>
+            </div>
+            <h3>Tavolette LatteNero & Gran Cacao</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/slitti-bars.webp" type="image/webp" />
+                <img src="assets/slitti-bars.webp" alt="Tavolette LatteNero e Gran Cacao" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Tavolette Slitti in diversi profili di cacao (45%, 51%, 73%, 82%, 100%) + Caffè Latte aromatizzata con arabica tostata.
+              Spiega il blend: cacao + cacao butter per morbidezza, equilibrio tra zuccheri e latte (nei profili più dolci).
+            </p>
+            <ul class="stat-list">
+              <li>Profili disponibili: LatteNero (45%, 51%, 73%, 82%, 100%), Caffè Latte con arabica</li>
+              <li>Composizione: cacao selezionato + cacao butter + latte (nei profili LatteNero)</li>
+              <li>Conservazione: 16-18°C, lontano da luce diretta e odori forti</li>
+              <li>Display: esponi campione aperto per mostrare pattern interno e lucentezza</li>
+              <li>Stock: FIFO rigoroso; comunica shelf life lunga per freschezza percepita</li>
+              <li>Abbinamenti suggeriti: pairing con espresso o cappuccino</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Pitch</button>
+            <div class="details">
+              <div class="steps">
+                <span>1. Chiedi preferenza cliente (latte/dark).</span>
+                <span>2. Suggerisci pairing con espresso o cappuccino.</span>
+                <span>3. Ricorda la confezione regalo e shelf life lunga.</span>
+              </div>
+              <div class="tips">Esporre sample aperto per mostrare pattern; mantieni stock FIFO.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi provare il set degustazione 3 tavolette? 45%, 73%, 100%"</span>
+                <span><strong>Opzione 2:</strong> "Caffè Latte aromatizzata con arabica è la nostra bestseller"</span>
+                <span><strong>Opzione 3:</strong> "Confezione regalo disponibile, perfetta per pensiero premium"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Conserva 16-18°C lontano da luce e odori. FIFO rigoroso. Esponi tavoletta sample aperta per mostrare pattern interno. Shelf life lunga ma comunica freschezza.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Mini cakes</span>
+              <span class="tag">Hazelnut / Almond</span>
+            </div>
+            <h3>Minicake</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/slitti-minicake.webp" type="image/webp" />
+                <img src="assets/slitti-minicake.webp" alt="Minicake Slitti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Mini cake Slitti con materie prime d'eccellenza: nocciole Tonda Gentile (Langhe) e mandorle Avola (Sicilia).
+              Tre varianti: latte nocciole, fondente mix fruit, fondente mandorle. Servi a temperatura ambiente o leggermente tiepida.
+            </p>
+            <ul class="stat-list">
+              <li>Varianti: latte nocciole Langhe, fondente mix fruit, fondente mandorle Avola</li>
+              <li>Materie prime: Tonda Gentile Langhe DOP, mandorla Avola DOP (comunica origine)</li>
+              <li>Servizio: temperatura ambiente oppure 10 secondi microonde per esaltare profumi</li>
+              <li>Accompagnamento: crema Slittosa per combo perfetta</li>
+              <li>Sampling: taglia mini slice durante le ore lente (aumenta conversione)</li>
+              <li>Pairing caffè: cappuccino cremoso per esaltare nocciola</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Notes</button>
+            <div class="details">
+              <div class="steps">
+                <span>1. Spiega differenza ingredienti (Tonda Gentile, mandorla Avola).</span>
+                <span>2. Servi a temperatura ambiente o leggermente tiepida.</span>
+                <span>3. Consiglia accompagnamento con crema spalmabile Slittosa.</span>
+              </div>
+              <div class="tips">Taglia mini slice per degustazioni flash durante i momenti lenti.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Minicake + crema Slittosa spalmabile = combo perfetta"</span>
+                <span><strong>Opzione 2:</strong> "Abbiniamo cappuccino cremoso per esaltare nocciola?"</span>
+                <span><strong>Opzione 3:</strong> "Racconta ingredienti: Tonda Gentile Langhe, mandorla Avola DOP"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Temperatura ambiente o 10s microonde per esaltare profumi. Taglia mini slice per sampling nelle ore lente. Valorizza origine ingredienti per giustificare premium.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Praline</span>
+              <span class="tag">Dragée</span>
+            </div>
+            <h3>Praline & Dragée</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/slitti-praline.webp" type="image/webp" />
+                <img src="assets/slitti-praline.webp" alt="Dragée e praline Slitti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Praline Origin e Irish Coffee (0,9% alc) + dragée su base di pistacchio, mandorla, nocciola, cranberry, arachidi caramel, amarene e arabica.
+              Ogni dragée racconta la propria provenienza: Bronte, Avola, Langhe. Mantieni sempre temperatura fresca e luce bassa.
+            </p>
+            <ul class="stat-list">
+              <li>Praline: Origin, Irish Coffee (0,9% alcol), Passion Fruit</li>
+              <li>Dragée: pistacchio Bronte, mandorla Avola DOP, nocciola Langhe, cranberry, arachidi caramel, amarene, arabica, zenzero</li>
+              <li>Provenienza: evidenzia su lavagnette (Bronte, Avola, Langhe) per valore</li>
+              <li>Conservazione: 16-18°C, luce bassa, contenitori ermetici per lucentezza</li>
+              <li>Abbinamenti: pistacchio + Pistachio Hot, ginger + chai</li>
+              <li>Sampling: assaggi guidati aumentano conversione e customer knowledge</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Display tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Mantieni temperatura fresca e luce bassa.</span>
+                <span>2 · Offri assaggio se apri una confezione campione.</span>
+                <span>3 · Pairing suggeriti: pistacchi con Pistachio Hot, ginger con chai.</span>
+              </div>
+              <div class="tips">Evidenzia la provenienza (Bronte, Avola, Langhe) sulle lavagnette.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Box misto dragée: pistacchi Bronte + nocciole Langhe + cranberry"</span>
+                <span><strong>Opzione 2:</strong> "Praline Irish Coffee con 0.9% alcol per momento indulgenza"</span>
+                <span><strong>Opzione 3:</strong> "Pairing perfetto: dragée pistacchi + Pistachio Hot"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Temperatura fresca 16-18°C, luce bassa per preservare lucentezza. Contenitori ermetici. Evidenzia origine su lavagnette: Bronte, Avola, Langhe. Assaggi guidati aumentano conversione.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Spalmabili</span>
+              <span class="tag">37-57% nocciole</span>
+            </div>
+            <h3>Creme Slittosa / Riccosa / Gianera</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/slitti-creme.webp" type="image/webp" />
+                <img src="assets/slitti-creme.webp" alt="Creme spalmabili Slitti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Solo nocciole Tonda Gentile + cacao selezionato. Nocciola %: 37 (Slittosa), 51 (Riccosa), 57 (Gianera).</p>
+            <ul class="stat-list">
+              <li>Composizione: solo nocciole Tonda Gentile + cacao (zero olio di palma)</li>
+              <li>Profili: Slittosa 37% (dolce), Riccosa 51% (equilibrio), Gianera 57% (intensa)</li>
+              <li>Display: mostra texture con spatola monouso per igiene</li>
+              <li>Usi suggeriti: su crepe, waffle, panettone, gelato o gelato box</li>
+              <li>Manutenzione vasi: mantieni puliti (no residui fuori) per igiene e appeal</li>
+              <li>Posizionamento strategico: vicino cassa per impulse buy (last-minute upsell)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Vendita</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Mostra texture con spatola monouso per igiene.</span>
+                <span>2 · Suggerisci su crepe, waffle, panettone o gelato.</span>
+                <span>3 · Posizionamento strategico vicino cassa per impulse buy.</span>
+              </div>
+              <div class="tips">Mantieni vasi sempre puliti (nessun residuo fuori) per igiene visiva e appeal.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Creme spalmabili su crepe calde - vedi il contrasto?"</span>
+                <span><strong>Opzione 2:</strong> "Slittosa (37% dolce), Riccosa (51% equilibrio) o Gianera (57% intensa)? Dipende dal tuo gusto"</span>
+                <span><strong>Opzione 3:</strong> "Zero olio di palma - pura nocciola Tonda Gentile"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Tre livelli di nocciola per profili diversi. Slittosa per chi ama dolcezza, Gianera per chi vuole intensità. Mostra sempre texture con spatola per appeal visivo e igiene.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--maintenance" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Display</span>
+              <span class="tag">FIFO</span>
+            </div>
+            <h3>Setup & stock</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/yoyo-display.webp" type="image/webp" />
+                <img src="assets/yoyo-display.webp" alt="Display Yo-Yo" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Esponi Yo-Yo sopra la gelato vetrina, senza crumble. Alternative: pan label se conservati in gastronorm.</p>
+            <button class="btn-ghost" data-toggle-card>Note</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Posiziona espositori centrali, mantieni superficie pulita.</span>
+                <span>2 · Etichetta pan di backup con data.</span>
+                <span>3 · Reinserisci prodotti man mano per avere look sempre pieno.</span>
+              </div>
+              <div class="tips">Palette blu/rosa/giallo aiuta a distinguere i gusti special dalla linea classica.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Visual:</strong> "Display sopra vetrina gelato per massima visibilità"</span>
+                <span><strong>Colori:</strong> "Palette blu/rosa/giallo distingue gusti special per guidare scelta"</span>
+                <span><strong>Stock:</strong> "Look sempre pieno comunica freschezza e disponibilità"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Posizionamento centrale sopra vetrina per eye-level. FIFO rigoroso. Etichetta pan backup con date. Superfici sempre pulite senza crumble. Reinserisci continuamente per look pieno.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--procedure" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Servizio</span>
+              <span class="tag">80-90 g gelato</span>
+            </div>
+            <h3>Procedura servizio</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/yoyo-tool.webp" type="image/webp" />
+                <img src="assets/yoyo-tool.webp" alt="Tool Yo-Yo" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Tool Yo-Yo dedicato + 2 wafer + scoop gelato (80/90 g) + chiusura.</p>
+            <ul class="stat-list">
+              <li>Indossare guanti</li>
+              <li>Usare scooper tondo per porzione regolare</li>
+              <li>Evitare overflow</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step</button>
+            <div class="details">
+              <div class="steps">
+                <span>1. Posiziona wafer base nel tool.</span>
+                <span>2. Aggiungi scoop centrato e chiudi con secondo wafer.</span>
+                <span>3. Rifinisci bordo, servi immediatamente.</span>
+              </div>
+              <div class="tips">Proponi abbinamento con espresso o mini cioccolata per creare rituale pomeridiano.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Yo-Yo + espresso double = rituale pomeridiano perfetto"</span>
+                <span><strong>Opzione 2:</strong> "Aggiungiamo mini cioccolata calda Slitti per pairing premium?"</span>
+                <span><strong>Opzione 3:</strong> "Vuoi provare gusto special pistacchio o limited edition?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Usa sempre guanti per igiene. Tool Yo-Yo dedicato per pressione uniforme. Scoop centrato 80-90g con scooper tondo. Evita overflow. Servi immediatamente per texture perfetta wafer/gelato.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">🍫</div>
+        <h3 class="footer-title">Slitti & Yo-Yo</h3>
+        <p class="footer-tagline">Cioccolato di eccellenza</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">7 Prodotti</span>
+            <span class="stat-label">Prodotti</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Listino locale</span>
+            <span class="stat-label">Range</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Tutto l'anno Stagione</span>
+            <span class="stat-label">Stagione</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
+
+

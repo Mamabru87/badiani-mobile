@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet Treat Atelier · Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+  </head>
+  <body data-product="sweet-treats">
+    <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffè Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti & Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive & Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content-area">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="badge">
+            <span>Linea Dessert · 2025</span>
+            <span class="page-stars" data-page-stars>? Stelle: 13/13</span>
+          </div>
+          <h1>Sweet Treat Atelier</h1>
+          <p>
+            Laboratorio digitale per crepe, waffle, burger di gelato e set da tè. Include grammature, shelf life, ordine di
+            assemblaggio e scenografia di servizio per stupire in boutique.
+          </p>
+          
+        </div>
+        <div class="hero-card visual">
+          <picture>
+            <source srcset="assets/sweet-cover.webp" type="image/webp" />
+            <img src="assets/sweet-cover.webp" alt="Dessert counter Badiani" loading="lazy" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="carousel" data-carousel="sweet-treats">
+        <header class="carousel-header" data-carousel-header>
+          <div class="carousel-header__title-block">
+            <h2 class="carousel-title" data-carousel-title>Sweet Treat Atelier</h2>
+            <span class="carousel-category" data-carousel-category>Linea Dessert · 2025</span>
+          </div>
+          <div class="carousel-indicators" data-carousel-indicators></div>
+        </header>
+
+        <div class="carousel-track" data-carousel-track>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Big batch</span>
+              <span class="tag">Small batch</span>
+            </div>
+            <h3>Base Crepe</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-crepe-base.webp" type="image/webp" />
+                <img src="assets/sweet-crepe-base.webp" alt="Impasto crepe Badiani" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Impasto base valido per tutte le crepe: prepara il mix, lascialo riposare e usalo come base per le varianti dolci e salate.
+              Prima del servizio verifica sempre riposo e conservazione: riposo minimo 2 ore in frigo; shelf life del mix 3 giorni.
+            </p>
+            <ul class="stat-list">
+              <li><strong>Shelf life:</strong> 3 giorni (frigo)</li>
+              <li><strong>Riposo:</strong> almeno 2 ore (frigo)</li>
+              <li><strong>Ricetta (lotto grande):</strong> 1500 ml latte, 300 ml acqua, 9 uova, 1200 g farina, 250 g zucchero, 15 g sale, 150 g burro fuso</li>
+              <li><strong>Ricetta (lotto piccolo):</strong> 1000 ml latte, 200 ml acqua, 6 uova, 800 g farina, 165 g zucchero, 10 g sale, 100 g burro fuso</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Miscelare ingredienti liquidi, aggiungere secchi e frullare.</span>
+                <span>2 · Concludere con burro fuso, riposo in frigo.</span>
+                <span>3 · Cuocere 20 s per lato su piastra leggermente unta.</span>
+              </div>
+              <div class="tips">Usa caraffa graduata per porzionare. Il mix resta utilizzabile fino a 3 giorni in frigo.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Extra topping:</strong> proponi frutta, extra sauce o crumble.</span>
+                <span><strong>Upgrade:</strong> suggerisci 1 scoop di Buontalenti per trasformarla in dessert completo.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Riposo minimo 2h. Piastra a temperatura media: il primo giro è "test" per regolare densità e quantità.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Buontalenti</span>
+              <span class="tag">Signature sauce</span>
+            </div>
+            <h3>Signature Buontalenti Crepe</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-crepe-buontalenti.webp" type="image/webp" />
+                <img src="assets/sweet-crepe-buontalenti.webp" alt="Crepe Buontalenti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Crepe dolce con salsa scelta, zucchero a velo e scoop di Buontalenti.</p>
+            <ul class="stat-list">
+              <li><strong>Ricetta:</strong> usa impasto Base Crepe (stesso mix)</li>
+              <li><strong>Ladle:</strong> 1-1.5 mestoli dell'impasto</li>
+              <li><strong>Cottura:</strong> 20 secondi primo lato, 20 secondi secondo lato</li>
+              <li><strong>Farcitura:</strong> salsa a scelta (pistacchio, nocciola, tiramisù, etc.), 30 g</li>
+              <li><strong>Topping finale:</strong> zucchero a velo + 1 scoop Buontalenti (70 g)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Stendi mix, gira quando dorata.</span>
+                <span>2 · Spalma la salsa su metà, chiudi a mezzaluna poi a ventaglio.</span>
+                <span>3 · Impiatta, zucchero a velo, salsa sopra e gelato.</span>
+              </div>
+              <div class="tips">Upsell extra frutta, crumble o sauce swirl.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Extra sauce:</strong> proponi doppio drizzle della salsa scelta.</span>
+                <span><strong>Frutta/topping:</strong> aggiungi frutta o crumble per texture.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Aggiungi la pallina (70 g) all'ultimo per evitare melting. Piega pulita a ventaglio e zucchero a velo fine per finish premium.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Italiana</span>
+              <span class="tag">Plain o beet</span>
+            </div>
+            <h3>Crepe Italiana</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-crepe-italiana.webp" type="image/webp" />
+                <img src="assets/sweet-crepe-italiana.webp" alt="Crepe Italiana salata" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Versione salata con mozzarella, rucola e pomodorini.</p>
+            <ul class="stat-list">
+              <li><strong>Ricetta:</strong> usa impasto Base Crepe</li>
+              <li><strong>Variante Beetroot:</strong> disponibile (dettagli nei Pro tip)</li>
+              <li><strong>Ladle:</strong> 1-1.5 mestoli dell'impasto</li>
+              <li><strong>Cottura:</strong> 20 s primo lato, 20 s secondo lato, 10 s finali dopo ripieno</li>
+              <li><strong>Ripieno:</strong> ½ cup mozzarella (ben scolata), ½ cup rucola, 3 pomodorini (12 quarti), sale e olio qb</li>
+              <li><strong>Piegatura:</strong> alto/basso poi lati per chiusura</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Cuoci 20 s, gira e cuoci altri 20 s.</span>
+                <span>2 · Gira ancora, aggiungi ripieno (sale e olio qb).</span>
+                <span>3 · Piega (alto/basso poi lati), gira e cuoci 10 s; taglia a metà e decora.</span>
+              </div>
+              <div class="tips">Servi tagliata a metà su piatto caldo per mantenere crunch.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Beetroot base:</strong> proponi la versione colorata (3 g/250 g).</span>
+                <span><strong>Abbinamento:</strong> suggerisci una bevanda calda o un soft drink.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Mozzarella ben scolata (evita crepe molle). Pomodorini tagliati all'ultimo. Rucola aggiunta dopo la cottura. Per la variante Beetroot: mescola 3 g di polvere di barbabietola in 250 g di impasto base e frulla bene prima di cuocere.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Prosciutto</span>
+              <span class="tag">Servizio caldo</span>
+            </div>
+            <h3>Crepe Prosciutto</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-crepe-prosciutto.webp" type="image/webp" />
+                <img src="assets/sweet-crepe-prosciutto.webp" alt="Crepe al prosciutto" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Base plain o beet con mozzarella, rucola e 2 fette di prosciutto.</p>
+            <ul class="stat-list">
+              <li><strong>Ricetta base:</strong> impasto Base Crepe</li>
+              <li><strong>Variante Beetroot:</strong> disponibile (dettagli nei Pro tip)</li>
+              <li><strong>Ladle:</strong> 1-1.5 mestoli dell'impasto</li>
+              <li><strong>Cottura:</strong> 20 s primo lato, 20 s secondo lato, 10 s finali dopo ripieno</li>
+              <li><strong>Ripieno:</strong> ½ cup mozzarella (ben scolata), ½ cup rucola, 2 fette prosciutto (20-25 g), sale e olio qb</li>
+              <li><strong>Piegatura:</strong> alto/basso poi lati per chiusura</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Cuoci 20 s, gira e cuoci altri 20 s.</span>
+                <span>2 · Gira ancora, aggiungi mozzarella, rucola, prosciutto (sale e olio qb).</span>
+                <span>3 · Piega, gira e cuoci 10 s; taglia a metà e decora.</span>
+              </div>
+              <div class="tips">Taglia sempre in due metà per consumo facile take-away.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Beetroot base:</strong> proponi la versione colorata.</span>
+                <span><strong>Abbinamento:</strong> suggerisci una bevanda in combo (espresso/americano o soft).</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Rispetta l'ordine di cottura del training (20s+20s+10s). Taglio a metà e impiattamento pulito migliorano la percezione. Per la variante Beetroot: mescola 3 g di polvere di barbabietola in 250 g di impasto base e frulla bene prima di cuocere.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Waffle</span>
+              <span class="tag">Shelf life mix 2 giorni</span>
+            </div>
+            <h3>Waffles</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-waffle.webp" type="image/webp" />
+                <img src="assets/sweet-waffle.webp" alt="Waffle con topping" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Waffles con mix pre dosato dal laboratorio. La cottura totale è 5 minuti, divisi in due fasi uguali (2.5 min per lato).
+              Prima di aggiungere topping, lascia riposare 45 secondi: questo mantiene la croccantezza esterna.
+            </p>
+            <ul class="stat-list">
+              <li><strong>Shelf life mix:</strong> 2 giorni (controlla data etichetta)</li>
+              <li><strong>Macchina:</strong> accendi e attendi luci verdi READY + POWER</li>
+              <li><strong>Batter:</strong> versane 1 scoop (177 ml) coprendo bene tutti gli spazi della piastra</li>
+              <li><strong>Cottura:</strong> 2.5 minuti primo lato, 2.5 minuti secondo lato (totale 5 minuti)</li>
+              <li><strong>Riposo:</strong> 45 secondi obbligatori prima dei topping (per croccantezza)</li>
+              <li><strong>Pulizia:</strong> pulisci la piastra tra un waffle e l'altro per evitare bruciature</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Ungi leggermente con olio di semi; attendi entrambe luci verdi.</span>
+                <span>2 · Versa 1 scoop (177 ml), chiudi e cuoci 2.5 min.</span>
+                <span>3 · Gira e cuoci altri 2.5 min; rimuovi e riposa 45 s prima dei topping.</span>
+              </div>
+              <div class="tips">Mostra il topping al cliente per effetto scenico.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Upgrade:</strong> proponi gelato + sauce come combinazione signature.</span>
+                <span><strong>Extra:</strong> panna o frutta per "effetto wow".</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Riposo 45 s obbligatorio per croccantezza. Mix entro 2 giorni. Piastra pulita evita residui bruciati.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Pancake</span>
+              <span class="tag">Mix crepe style</span>
+            </div>
+            <h3>Pancake Stack</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-pancake.webp" type="image/webp" />
+                <img src="assets/sweet-pancake.webp" alt="Pancake blueberry" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              3 pancake su piastra crepe, cotti fino alle bolle. Puoi scegliere Blueberry (già combinato) oppure Build Your Own (il cliente sceglie i topping).
+              I pancake vanno serviti subito e caldi: non preparare lo stack in anticipo.
+            </p>
+            <ul class="stat-list">
+              <li><strong>Porzione:</strong> sempre 3 pancake per stack</li>
+              <li><strong>Cottura primo lato:</strong> versa 1 scoop di ladle per pancake (ripeti 3 volte), attendi bolle (~90 secondi)</li>
+              <li><strong>Cottura secondo lato:</strong> gira con spatola, cuoci altri 30 secondi</li>
+              <li><strong>Blueberry standard:</strong> 1 fragola (divisa in 4 pezzi) + 7-8 mirtilli + panna a lato + mini caraffa sciroppo d'acero</li>
+              <li><strong>Build Your Own:</strong> cliente sceglie 2 topping, completa con sciroppo d'acero o miele</li>
+              <li><strong>Presentazione:</strong> spolvera zucchero a velo, disponi topping in modo visibile, aggiungi panna se richiesta</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Versa 1 scoop di pancake ladle per pancake (ripeti 3 volte).</span>
+                <span>2 · Attendi bolle (~90 s), gira con spatola e cuoci 30 s.</span>
+                <span>3 · Impiatta lo stack, spolvera zucchero a velo e completa la presentazione.</span>
+              </div>
+              <div class="tips">BYO: se uno dei topping è frutta, mettila sopra; se è secco, spolvera sopra e metti l'altro topping in ramekin.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Topping:</strong> ricordare la scelta tra frutta, ingredienti secchi e sauce/extras.</span>
+                <span><strong>Extra:</strong> panna montata, pistachio o dolcevita sauce, miele o sciroppo.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Flip al momento delle bolle (~90 s). Non preparare lo stack in anticipo: va servito caldo.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Porridge</span>
+              <span class="tag">125 ml latte</span>
+            </div>
+            <h3>Porridge Bowl</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-pancake.webp" type="image/webp" />
+                <img src="assets/sweet-pancake.webp" alt="Immagine di esempio: pancake (in attesa foto porridge)" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Oat Original personalizzabile con frutta, ingredienti secchi e sauce/extras.</p>
+            <ul class="stat-list">
+              <li><strong>Ricetta base:</strong> 125-130 ml latte + 2 misurini di oats</li>
+              <li><strong>Riscaldamento latte:</strong> steam con lancia a 65°C</li>
+              <li><strong>Miscelazione:</strong> mescola oats nel latte e riposa 30 secondi per stabilizzare texture</li>
+              <li><strong>Servizio Oat Original:</strong> mirtilli + miele in mini bricco (disponibile su richiesta)</li>
+              <li><strong>Personalizzazione:</strong> topping aggiuntivi a scelta cliente (frutta, ingredienti secchi, salse)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Misura 125-130 ml latte e scaldalo con la lancia.</span>
+                <span>2 · Aggiungi 2 misurini di oats, mescola e lascia riposare 30 s.</span>
+                <span>3 · Versa nel bicchiere/cup e aggiungi i topping richiesti.</span>
+              </div>
+              <div class="tips">Se il cliente richiede miele o sauce, servili in una mini caraffa separata.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Extra topping:</strong> proponi ingredienti secchi (chocolate/coconut/nuts) e sauce (pistachio/dolcevita) o miele.</span>
+                <span><strong>Valore:</strong> ricorda che si possono offrire due topping aggiuntivi tra quelli previsti.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Riposo 30 s obbligatorio: gli oats assorbono e la texture si stabilizza.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Burger gelato</span>
+              <span class="tag">Bun 2 giorni</span>
+            </div>
+            <h3>Gelato Burger</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-gelato-burger.webp" type="image/webp" />
+                <img src="assets/sweet-gelato-burger.webp" alt="Gelato burger" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Bun caldo farcito con 1 scoop (70 g) e 1 sola sauce (Bruna o Pistachio).</p>
+            <ul class="stat-list">
+              <li><strong>Shelf life bun (scongelato):</strong> 2 giorni</li>
+              <li><strong>Timer macchina:</strong> 12 s</li>
+              <li><strong>Gelato:</strong> 1 scoop (70 g)</li>
+              <li><strong>Sauce:</strong> 1 sola scelta, piccola quantità al centro</li>
+              <li><strong>Olio:</strong> non necessario</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Accendi la macchina, imposta 12 s e attendi che sia calda (~10 min).</span>
+                <span>2 · Metti la parte superiore del bun nella macchina (senza chiudere).</span>
+                <span>3 · Inserisci 1 scoop (70 g) al centro e aggiungi la sauce sull'altra metà.</span>
+                <span>4 · Chiudi bun, chiudi macchina, avvia timer; gira e riapri a fine ciclo.</span>
+                <span>5 · Servi in carta oleata Badiani (usare guanti/utensili se necessario).</span>
+              </div>
+              <div class="tips">Ricorda al cliente che il bun è caldo. La macchina si pulisce solo con blue-roll (niente residui/olio).</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Consiglio gusto:</strong> suggerisci Buontalenti + Bruna (come da training).</span>
+                <span><strong>Abbinamento:</strong> proponi una bevanda (es. espresso/americano) per contrasto caldo-freddo.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> 12 secondi esatti. Servizio veloce: il gelato scioglie rapidamente. Avvisa "mangia subito".</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Croissant</span>
+              <span class="tag">Shelf life 2 giorni</span>
+            </div>
+            <h3>Gelato Croissant</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-gelato-croissant.webp" type="image/webp" />
+                <img src="assets/sweet-gelato-croissant.webp" alt="Gelato croissant" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Croissant tagliato a metà con 2 scoop (2x70 g) di Buontalenti, pistachio sauce e pistachio crumble.</p>
+            <ul class="stat-list">
+              <li><strong>Shelf life croissant:</strong> 2 giorni</li>
+              <li><strong>Gelato:</strong> 2 scoop (2x70 g) Buontalenti</li>
+              <li><strong>Pistachio sauce:</strong> ~20 g</li>
+              <li><strong>Pistachio crumble:</strong> 7 g (1 tbsp)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Taglia il croissant a metà (lengthwise).</span>
+                <span>2 · Metti 2 scoop (2x70 g) di Buontalenti e spalmali sulla base.</span>
+                <span>3 · Drizzle pistachio sauce (~20 g) e completa con pistachio crumble (7 g).</span>
+              </div>
+              <div class="tips">Rendi il topping uno show davanti al cliente. Extra sauce va addebitata secondo listino.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Extra sauce:</strong> proponi "doppio drizzle" come upgrade.</span>
+                <span><strong>Abbinamento:</strong> suggerisci espresso caldo per bilanciare.</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Taglio netto e topping davanti al cliente: la percezione di qualità sale subito.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Plateau 2 livelli</span>
+              <span class="tag">Tea service</span>
+            </div>
+            <h3>Afternoon Tea Signature</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-afternoon-tea-a.webp" type="image/webp" />
+                <img src="assets/sweet-afternoon-tea-a.webp" alt="Afternoon tea stand" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Stand premium con pastries, 1 scoop Buontalenti con wafer, strawberry jam e servizio tè in teiera.</p>
+            <ul class="stat-list">
+              <li><strong>Pastries:</strong> 2 citron tarts, 1 pecan tart, 1 chocolate tart, 2 mini éclairs, 2 mini sauce croissants</li>
+              <li><strong>Gelato:</strong> 1 scoop Buontalenti + wafer</li>
+              <li><strong>Condimenti:</strong> 1 tub strawberry jam</li>
+              <li><strong>Tea set:</strong> 2 teiere + 2 tazze con piattino + 2 mini milk jars + zucchero/dolcificante</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Disponi i pastries sullo stand (leggeri in alto, più ricchi in basso) in modo simmetrico.</span>
+                <span>2 · Prepara 1 scoop Buontalenti con wafer e aggiungi la strawberry jam.</span>
+                <span>3 · Prepara 2 teiere (scelta cliente), cups con piattino, latte, zucchero e gelato spoons come stirrers.</span>
+                <span>4 · Presenta il set descrivendo componenti e possibili esigenze/diete/allergeni.</span>
+              </div>
+              <div class="tips">Teiere e tazze calde migliorano l'esperienza. Fornisci napkin e cutlery in legno su richiesta.</div>
+              <div class="steps">
+                <strong>Upselling</strong>
+                <span><strong>Pairing:</strong> spiega abbinamento gelato + jam e guida l'ordine di assaggio (leggeri -> ricchi).</span>
+              </div>
+              <div class="tips"><strong>Pro tip:</strong> Presentazione breve e chiara: cosa c'è sullo stand, cosa c'è nel tea set, e come mangiarlo. Chiedi proattivamente esigenze alimentari/allergeni.</div>
+            </div>
+          </article>
+
+          <!-- NUOVE SCHEDE TEMATICHE IN FONDO -->
+          <article class="guide-card guide-card--procedure" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag tag--safety">Sicurezza</span>
+            </div>
+            <h3>Food Safety & Allergen Alert</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-storage.webp" type="image/webp" />
+                <img src="assets/sweet-storage.webp" alt="Immagine di esempio: storage (in attesa foto sicurezza)" loading="lazy" />
+              </picture>
+            </figure>
+            <p>La sicurezza alimentare è la base di ogni servizio: attenzione massima a contaminazioni e allergeni.</p>
+            <ul class="stat-list">
+              <li><strong>Allergeni:</strong> comunicazione chiara e proattiva</li>
+              <li><strong>Contaminazione:</strong> utensili/guanti dedicati quando necessario</li>
+              <li><strong>Conservazione:</strong> seguire HACCP locale e procedure boutique</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Igienizza mani e superfici prima di ogni servizio.</span>
+                <span>2 · Cambia guanti tra prodotti diversi.</span>
+                <span>3 · In caso di dubbio, chiedi sempre conferma sugli allergeni.</span>
+              </div>
+              <div class="tips">Sorprendi il cliente: offri sempre info allergeni proattivamente, dimostra cura e professionalità.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag tag--upsell">Upselling Prodotto</span>
+            </div>
+            <h3>Sweet Upsell Mastery</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-afternoon-tea-b.webp" type="image/webp" />
+                <img src="assets/sweet-afternoon-tea-b.webp" alt="Upselling dessert" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Ogni dolce è un'occasione per sorprendere: trasforma la scelta in esperienza con proposte mirate.</p>
+            <ul class="stat-list">
+              <li><strong>Abbinamento:</strong> suggerisci una bevanda coerente con il dolce</li>
+              <li><strong>Upgrade:</strong> extra topping/sauce o variante signature</li>
+              <li><strong>Storytelling:</strong> descrivi ingredienti e gesto di preparazione</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Ascolta la richiesta e suggerisci un extra coerente.</span>
+                <span>2 · Usa storytelling: ingredienti, origine, stagionalità.</span>
+                <span>3 · Sfrutta la "prova assaggio" per invogliare all'acquisto.</span>
+              </div>
+              <div class="tips">Sorprendi: crea combo "dolce + drink" a prezzo speciale, oppure offri un assaggio di topping signature.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--maintenance" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag tag--safety">Tecnica & Conservazione</span>
+            </div>
+            <h3>Lab Secrets & Storage</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/sweet-storage.webp" type="image/webp" />
+                <img src="assets/sweet-storage.webp" alt="Conservazione dessert" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Dietro ogni prodotto perfetto c'è tecnica e cura nella conservazione: ecco i segreti dei professionisti.</p>
+            <ul class="stat-list">
+              <li><strong>Rotazione:</strong> FIFO sempre</li>
+              <li><strong>Etichette:</strong> aggiorna produzione/apertura secondo procedura</li>
+              <li><strong>Vetrina:</strong> pulizia e controllo condizioni secondo routine boutique</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Aggiorna etichette con orario produzione.</span>
+                <span>2 · Mantieni esposizione ordinata e completa (replenish quando serve).</span>
+                <span>3 · Proteggi i prodotti quando necessario per preservare qualità.</span>
+              </div>
+              <div class="tips">Sorprendi: mostra al cliente come scegli il dolce più fresco, oppure spiega la cura dietro la shelf life.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">🍰</div>
+        <h3 class="footer-title">Sweet Treat Atelier</h3>
+        <p class="footer-tagline">Dolcezza artigianale quotidiana</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">13 Prodotti</span>
+            <span class="stat-label">Prodotti</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Listino locale</span>
+            <span class="stat-label">Range</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Tutto l'anno Stagione</span>
+            <span class="stat-label">Stagione</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

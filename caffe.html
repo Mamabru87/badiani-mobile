@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caffè Rituals · Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+  </head>
+  <body data-product="caffe">
+    <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffè Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti & Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive & Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content-area">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="badge">
+            <span>Linea Bar · 2025</span>
+            <span class="page-stars" data-page-stars>⭐ Stelle: 18/18</span>
+          </div>
+          <h1>Caffè Rituals</h1>
+          <p>
+            Manuale pratico per ogni bevanda servita nelle nostre boutique: estrazioni, latte, freddi e comfort drink.
+            Ogni scheda riporta pesi, temperature, tips e script di upselling tratti dalle linee guida ufficiali.
+          </p>
+          
+        </div>
+        <div class="hero-card visual">
+          <picture>
+            <source srcset="assets/caffe-cover.webp" type="image/webp" />
+            <img src="assets/caffe-cover.webp" alt="Setup linea caffè Badiani" loading="lazy" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="carousel" data-carousel="caffe">
+        <header class="carousel-header" data-carousel-header>
+          <div class="carousel-header__title-block">
+            <h2 class="carousel-title" data-carousel-title>Caffè Rituals</h2>
+            <span class="carousel-category" data-carousel-category>Linea Bar · 2025</span>
+          </div>
+          <div class="carousel-indicators" data-carousel-indicators></div>
+        </header>
+
+        <div class="carousel-track" data-carousel-track>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Acqua 2cm dal bordo</span>
+              <span class="tag">Servi con cucchiaino</span>
+            </div>
+            <h3>Americano</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/americano.png" type="image/png" />
+                <img src="assets/foto%20schede/americano.png" alt="Americano" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Acqua calda + espresso estratto direttamente in tazza quando possibile.</p>
+            <ul class="stat-list">
+              <li>Ricetta single: 8 oz acqua calda</li>
+              <li>Ricetta double: 12 oz acqua calda</li>
+              <li>Spazio di sicurezza: lascia 2 cm dalla sommità della tazza per evitare trabocchi</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Riempi la tazza con acqua calda lasciando 2 cm.</span>
+                <span>2 · Estrai espresso direttamente in tazza o in beaker separato.</span>
+                <span>3 · Servi con piattino e spoon; integra latte a parte su richiesta.</span>
+              </div>
+              <div class="tips">Aggiungi acqua da bricco metallico per evitare schizzi; suggerisci upgrade a iced white americano.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Iced version:</strong> "Fuori fa caldo: vuoi la versione fredda con ghiaccio?"</span>
+                <span><strong>Flavor shot:</strong> "Prova caramel o hazelnut - rende l'americano più dolce"</span>
+                <span><strong>Size upgrade:</strong> "Vuoi il formato large?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Americano troppo amaro? Verifica estrazione shot (deve essere dolce). Se cliente abituale chiede "forte" = doppio shot, non acqua ridotta.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Foam +⅓ volume</span>
+              <span class="tag">Stop a 65°C</span>
+            </div>
+            <h3>Cappuccino</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cappuccino.png" type="image/png" />
+                <img src="assets/foto%20schede/cappuccino.png" alt="Cappuccino" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Cappuccino equilibrato: espresso, latte caldo e schiuma fine. Obiettivo: texture vellutata senza bolle grandi.</p>
+            <ul class="stat-list">
+              <li>Formato: 8 oz (regular) / 12 oz (large)</li>
+              <li>Foam: circa 1/3 del volume</li>
+              <li>Temperatura: 65°C (sweet spot)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Espresso in tazza.</span>
+                <span>2 · Stretch 3-5s (aria), poi rolling (vortice) fino a microfoam.</span>
+                <span>3 · Versa controllando la schiuma; cacao solo su richiesta.</span>
+              </div>
+              <div class="tips">Se bolle grandi: wand troppo alta. Tap & swirl sempre prima di versare.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Alt milk:</strong> "Lo preferisci con avena o mandorla?"</span>
+                <span><strong>Extra shot:</strong> "Vuoi più intensità? Aggiungo uno shot extra"</span>
+                <span><strong>Pastry pairing:</strong> "Lo abbiniamo a un croissant?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Qualità:</strong> Foam perfetto = microbolle, superficie lucida. Mai oltre 70°C.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Doppio shot</span>
+              <span class="tag">8 oz</span>
+            </div>
+            <h3>Flat White</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/flat%20white%20.png" type="image/png" />
+                <img src="assets/foto%20schede/flat%20white%20.png" alt="Flat white" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Flat White = doppio espresso + latte con microfoam (schiuma molto fine e vellutata). La differenza rispetto al latte normale è il rapporto più alto di caffè e la schiuma sottilissima.
+              L'obiettivo è una texture setosa, non bolle grandi.
+            </p>
+            <ul class="stat-list">
+              <li>Latte: stretch 3 secondi (incorpori aria), poi whirlpool (crei il vortice) per lisciare la schiuma</li>
+              <li>Temperatura: 65°C (punto di dolcezza naturale del latte)</li>
+              <li>Versata: inizia bassa per metà tazza, poi alza per creare eventuale latte art</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Doppio espresso in 8 oz.</span>
+                <span>2 · Monta latte evitando eccesso di aria.</span>
+                <span>3 · Versata continua, eventuale cortado a ¾ tazza.</span>
+              </div>
+              <div class="tips">Per richiesta cortado riempi al 75%; mantieni superfici lucide per latte art.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Ristretto shot:</strong> "Preferisci più corposo? Faccio ristretto invece che normale"</span>
+                <span><strong>Alternative milk:</strong> "Flat white con avena è signature: texture perfetta"</span>
+                <span><strong>Pastry pairing:</strong> "I nostri croissant al burro si abbinano perfettamente"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Flat White = microfoam sottile senza foam spesso. Differenza da latte = più caffè, meno latte, texture setosa. Pour basso per latte art.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Chai 2 pump</span>
+              <span class="tag">Dirty = + espresso</span>
+            </div>
+            <h3>Chai Latte</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/chai%20latte.png" type="image/png" />
+                <img src="assets/foto%20schede/chai%20latte.png" alt="Chai latte" loading="lazy" />
+              </picture>
+            </figure>
+            <p>2 pump di sciroppo chai, latte montato lucido e cannella. Variante Dirty: aggiungi espresso prima del latte.</p>
+            <ul class="stat-list">
+              <li>Sciroppo: 2 pump</li>
+              <li>Temperatura latte: 65°C</li>
+              <li>Finish: cannella (dust leggero)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Eroga lo sciroppo chai in tazza.</span>
+                <span>2 · (Dirty) Estrai 1 shot e mescola con lo sciroppo.</span>
+                <span>3 · Monta latte e versa; finisci con cannella.</span>
+              </div>
+              <div class="tips">Consiglia Dirty Chai a chi vuole spezie + caffeina senza “troppo caffè”.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Dirty upgrade:</strong> "Vuoi renderlo Dirty con uno shot?"</span>
+                <span><strong>Alt milk:</strong> "Con latte di avena le spezie risaltano di più"</span>
+                <span><strong>Extra pump:</strong> "Più intenso? Aggiungo un pump"</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Cioccolato + espresso</span>
+              <span class="tag">65°C</span>
+            </div>
+            <h3>Mocha</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/mocha.png" type="image/png" />
+                <img src="assets/foto%20schede/mocha.png" alt="Mocha" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Mocha = espresso + cacao + latte. Per evitare grumi, sciogli prima 2 cucchiai di cacao nell’espresso direttamente in tazza,
+              poi aggiungi il latte montato.
+            </p>
+            <ul class="stat-list">
+              <li>Shot single</li>
+              <li>Milk: stretch leggero</li>
+              <li>Vaso 8 oz</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Miscelare espresso e cacao nella tazza.</span>
+                <span>2 · Montare latte come per latte classico.</span>
+                <span>3 · Versare mantenendo il vortice per lucidare.</span>
+              </div>
+              <div class="tips">Se aggiungi panna monta solo ¾ tazza di latte per evitare overflow.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Panna montata:</strong> "Vuoi panna sopra? Diventa come un dessert"</span>
+                <span><strong>Extra chocolate:</strong> "Più intenso? Aggiungo cioccolato extra"</span>
+                <span><strong>Size upgrade:</strong> "Vuoi il formato large?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Mescola cacao con espresso PRIMA del latte (non dopo) per evitare grumi. Se il cliente chiede una versione "bianca", prepara un white mocha usando cioccolato bianco.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Hot chocolate</span>
+              <span class="tag">Servizio 65°C</span>
+            </div>
+            <h3>Hot Chocolate</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/hot%20chocolate.png" type="image/png" />
+                <img src="assets/foto%20schede/hot%20chocolate.png" alt="Hot chocolate" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Cioccolata calda cremosa: consistenza liscia, servizio caldo (non bollente) e finish pulito.</p>
+            <ul class="stat-list">
+              <li>Temperatura: 65°C</li>
+              <li>Texture: setosa (zero grumi)</li>
+              <li>Servizio: cucchiaino + piattino</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Scalda la base fino a temperatura di servizio.</span>
+                <span>2 · Mescola/omogeneizza prima di versare (la densità deve essere uniforme).</span>
+                <span>3 · Versa, pulisci bordo tazza, servi con spoon.</span>
+              </div>
+              <div class="tips">Se è troppo densa: non “allungare” a caso. Segui la ricetta ufficiale e rifai batch se serve.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Con panna:</strong> "Aggiungo una nuvola di panna?"</span>
+                <span><strong>Combo churros:</strong> "La abbiniamo ai churros?"</span>
+                <span><strong>Variante:</strong> "Vuoi provarla al pistacchio?"</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Gelato 70 g</span>
+              <span class="tag">Showtime</span>
+            </div>
+            <h3>Affogato</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/affogato.png" type="image/png" />
+                <img src="assets/foto%20schede/affogato.png" alt="Affogato" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Affogato = gelato “annegato” con espresso: servi 1 scoop di Buontalenti e versa un doppio espresso davanti al cliente.
+              Il servizio al momento è fondamentale: valorizza lo show e limita lo scioglimento.
+            </p>
+            <ul class="stat-list">
+              <li>Bicchiere 8 oz raffreddato</li>
+              <li>Espresso doppio</li>
+              <li>Servire subito</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Pre-raffredda la tazza.</span>
+                <span>2 · Dosare 70 g di Buontalenti.</span>
+                <span>3 · Versa l'espresso davanti al cliente per valorizzare lo show.</span>
+              </div>
+              <div class="tips">Spiega sempre il rituale (gelato + espresso versato al momento): aiuta il cliente a capire cosa sta per ricevere e aumenta la percezione di qualità.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Amaretti:</strong> "Biscotti amaretti per intingere? Tradizione italiana!"</span>
+                <span><strong>Extra gelato scoop:</strong> "Vuoi aggiungere un altro scoop?"</span>
+                <span><strong>Liquore shot:</strong> "Per una versione after dinner: Amaretto o Frangelico (se disponibile)"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Affogato = teatro! Versa espresso LENTAMENTE davanti a cliente (non in cucina). Bicchiere freddo SEMPRE. Servi subito prima che gelato si sciolga troppo.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag tag--product">Espresso + panna</span>
+              <span class="tag tag--product">Servire subito</span>
+            </div>
+            <h3>Whipped Coffee</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/wipped%20coffee.png" type="image/png" />
+                <img src="assets/foto%20schede/wipped%20coffee.png" alt="Whipped coffee" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Espresso singolo sormontato da panna montata fresca. Dessert espresso iconico per upsell lampo.</p>
+            <ul class="stat-list">
+              <li>Tazzina 2 oz preriscaldata</li>
+              <li>Panna montata al momento (no eccesso)</li>
+              <li>Servire con cucchiaino</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Prepara espresso singolo seguendo la procedura standard.</span>
+                <span>2 · Spruzza panna montata formando una cupola compatta (no overflow).</span>
+                <span>3 · Servi immediatamente con spoon e suggerisci di bere in un sorso.</span>
+              </div>
+              <div class="tips">Perfetto come add-on per clienti che ordinano espresso post dessert. Mantieni la panna fredda per stabilità.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi aggiungere cacao o cannella sulla panna?"</span>
+                <span><strong>Opzione 2:</strong> "Lo trasformo in affogato mini con un cucchiaino di Buontalenti"</span>
+                <span><strong>Opzione 3:</strong> "Espresso con panna e tavolette Slitti: pairing da intenditori"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Non eccedere con la panna: la pressione provoca overflow. Mantieni nozzle pulito e sostituisci bombole a fine servizio.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Iced Americano</span>
+              <span class="tag">Water + espresso</span>
+            </div>
+            <h3>Iced Americano</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/iced%20americano.png" type="image/png" />
+                <img src="assets/foto%20schede/iced%20americano.png" alt="Iced Americano" loading="lazy" />
+              </picture>
+            </figure>
+            <p>3 cubi grandi di ghiaccio, acqua fredda e doppio espresso versato lentamente.</p>
+            <ul class="stat-list">
+              <li>12 oz cup</li>
+              <li>Lascia 1/4 spazio</li>
+              <li>Mix zucchero nello shot</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Aggiungi ghiaccio e acqua lasciando spazio.</span>
+                <span>2 · Esegui doppio espresso in tazzina separata.</span>
+                <span>3 · Versa lentamente sopra un cubo per effetto visivo, aggiungi coperchio e straw.</span>
+              </div>
+              <div class="tips">Offri opzione iced white aggiungendo latte; zucchero o syrup sempre miscelati nello shot.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Iced white:</strong> "Vuoi più morbido? Aggiungo uno splash di latte freddo"</span>
+                <span><strong>Flavor shot:</strong> "Vanilla o caramel rendono dolce senza zucchero"</span>
+                <span><strong>Size large:</strong> "Vuoi il formato grande?"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Ghiaccio grande dura più (meno diluizione). Versa espresso SU cubo (non nel liquido) = layering Instagram-worthy. Zucchero SEMPRE nel shot caldo (non si scioglie nel freddo).</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Iced Latte</span>
+              <span class="tag">Milk show</span>
+            </div>
+            <h3>Iced Latte</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/iced%20latte.png" type="image/png" />
+                <img src="assets/foto%20schede/iced%20latte.png" alt="Iced Latte" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Ghiaccio + latte freddo, doppio espresso versato direttamente sopra creando layering.</p>
+            <ul class="stat-list">
+              <li>3 cubi grandi o 9 piccoli</li>
+              <li>Latte fino a 3/4</li>
+              <li>Sciroppi: mixare con espresso</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Aggiungi ghiaccio e latte lasciando spazio.</span>
+                <span>2 · Estrai doppio espresso.</span>
+                <span>3 · Versa lentamente su un cubo per effetto "slow motion".</span>
+              </div>
+              <div class="tips">Non mescolare prima di consegnare per valorizzare lo show.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Flavor shot:</strong> "Vanilla, caramel o hazelnut? Trasforma in signature drink"</span>
+                <span><strong>Alternative milk:</strong> "Latte avena rende più cremoso anche freddo"</span>
+                <span><strong>Extra shot:</strong> "Più caffeinato? Aggiungo uno shot extra"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Espresso DEVE essere versato su ghiaccio (non diretto nel latte) = effetto cascade. Latte freddo SEMPRE da frigo (4°C). Syrups nel bicchiere PRIMA di ghiaccio.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Signature iced</span>
+              <span class="tag">Layering</span>
+            </div>
+            <h3>Pistachio Iced Latte</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/pistacho%20iced%20latte.png" type="image/png" />
+                <img src="assets/foto%20schede/pistacho%20iced%20latte.png" alt="Pistachio iced latte" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Iced latte al pistacchio: salsa/sciroppo + latte freddo + espresso per effetto cascade. Non consegnare già mescolato.</p>
+            <ul class="stat-list">
+              <li>Formato: 12 oz</li>
+              <li>Ghiaccio: 3 cubi grandi</li>
+              <li>Syrup/salsa: prima del latte</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Metti sauce/sciroppo nel bicchiere (swirl interno).</span>
+                <span>2 · Aggiungi ghiaccio e latte freddo lasciando spazio.</span>
+                <span>3 · Versa espresso lentamente su un cubo per layering; chiudi con lid + straw.</span>
+              </div>
+              <div class="tips">Zucchero/sciroppo sempre miscelato nello shot caldo: nel freddo non si scioglie bene.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Extra drizzle:</strong> "Vuoi un drizzle extra di pistacchio?"</span>
+                <span><strong>Alt milk:</strong> "Con avena è super cremoso anche freddo"</span>
+                <span><strong>Cookie pairing:</strong> "Perfetto con biscotti Yo-Yo"</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Mix 1-4 L</span>
+              <span class="tag">Servizio 65°C</span>
+            </div>
+            <h3>Cioccolata Calda Classica</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cioccolata%20calda%20classica.png" type="image/png" />
+                <img src="assets/foto%20schede/cioccolata%20calda%20classica.png" alt="Cioccolata calda classica" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Ricetta Paolo Pomposi: base cremosa, servizio a 65°C. Versione classica con panna e finitura premium.</p>
+            <ul class="stat-list">
+              <li>Temperatura: 65°C</li>
+              <li>Servizio: spoon + piattino</li>
+              <li>Shelf life: 3 giorni dal primo warm-up (seguire policy)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Omogeneizza il mix prima del servizio.</span>
+                <span>2 · Versa e pulisci bordo tazza.</span>
+                <span>3 · Completa con panna (se prevista) e finitura.</span>
+              </div>
+              <div class="tips">Non servire prodotto fuori data: meglio rifare batch che “rischiare”.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Combo churros:</strong> "Vuoi abbinarla ai churros appena fritti?"</span>
+                <span><strong>Scaglie Slitti:</strong> "Aggiungo scaglie di cioccolato Slitti?"</span>
+                <span><strong>Variante pistacchio:</strong> "Vuoi provarla al pistacchio?"</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Pistacchio</span>
+              <span class="tag">Finish premium</span>
+            </div>
+            <h3>Cioccolata Calda Pistacchio</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cioccolata%20calda%20pistacchio.png" type="image/png" />
+                <img src="assets/foto%20schede/cioccolata%20calda%20pistacchio.png" alt="Cioccolata calda pistacchio" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Variante pistacchio: base cioccolata + swirl pistacchio. Deve essere omogenea e visivamente “wow”.</p>
+            <ul class="stat-list">
+              <li>Temperatura: 65°C</li>
+              <li>Swirl: pistacchio (quantità standard)</li>
+              <li>Top: panna + drizzle (se previsto)</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Versa la base a temperatura servizio.</span>
+                <span>2 · Aggiungi swirl pistacchio e rifinisci (panna/drizzle) secondo standard.</span>
+                <span>3 · Servi subito: la consistenza deve rimanere densa e lucida.</span>
+              </div>
+              <div class="tips">Usa utensili dedicati per evitare contaminazioni tra gusti (HACCP/allergeni).</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Kids size</span>
+              <span class="tag">Dolcezza soft</span>
+            </div>
+            <h3>Cioccolata Calda Pistacchio Kids</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cioccolata%20calda%20pistacchio%20kids.png" type="image/png" />
+                <img src="assets/foto%20schede/cioccolata%20calda%20pistacchio%20kids.png" alt="Cioccolata pistacchio kids" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Versione kids: porzione più piccola, dolcezza bilanciata, servizio sicuro (temperatura controllata).</p>
+            <ul class="stat-list">
+              <li>Formato: kids cup</li>
+              <li>Temperatura: sempre 65°C (mai bollente)</li>
+              <li>Servizio: avvisa “caldo” ai genitori</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Prepara porzione kids secondo standard.</span>
+                <span>2 · Controlla temperatura e pulizia bordo bicchiere/tazza.</span>
+                <span>3 · Consegna con cucchiaino e comunicazione sicurezza.</span>
+              </div>
+              <div class="tips">Mai overfill: lascia spazio per evitare spill durante trasporto.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Kids size</span>
+              <span class="tag">Classica</span>
+            </div>
+            <h3>Cioccolata Classica Kids</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cioccolata%20classica%20kids.png" type="image/png" />
+                <img src="assets/foto%20schede/cioccolata%20classica%20kids.png" alt="Cioccolata classica kids" loading="lazy" />
+              </picture>
+            </figure>
+            <p>La cioccolata “classica” in formato kids: stessa qualità, porzione ridotta e consegna sicura.</p>
+            <ul class="stat-list">
+              <li>Formato: kids cup</li>
+              <li>Temperatura: 65°C</li>
+              <li>Finish: panna solo se richiesta/prevista</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Versa porzione kids.</span>
+                <span>2 · Controlla che sia omogenea (no sedimenti).</span>
+                <span>3 · Comunica “attenzione caldo” e servi con spoon.</span>
+              </div>
+              <div class="tips">Suggerisci mini churros come pairing famiglia.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Affogato</span>
+              <span class="tag">Show caldo/freddo</span>
+            </div>
+            <h3>Cioccolata Calda Affogato</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/cioccolata%20calda%20affogato.png" type="image/png" />
+                <img src="assets/foto%20schede/cioccolata%20calda%20affogato.png" alt="Cioccolata calda affogato" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Twist “affogato”: contrasto caldo/freddo. Impiattamento pulito e timing rapido per mantenere texture.</p>
+            <ul class="stat-list">
+              <li>Servizio: immediato</li>
+              <li>Contrasto: caldo (cioccolata) + freddo (gelato/elemento freddo)</li>
+              <li>Presentazione: bordi puliti, spoon sempre</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Prepara la base calda a 65°C.</span>
+                <span>2 · Aggiungi la componente “affogato” e servi subito.</span>
+                <span>3 · Spiega il rituale al cliente (è parte dell’esperienza).</span>
+              </div>
+              <div class="tips">Qui si vende con lo storytelling: “caldo che abbraccia il freddo”.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Comfort drink</span>
+              <span class="tag">Pistacchio caldo</span>
+            </div>
+            <h3>Pistachio Hot</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/pistachio%20hot.png" type="image/png" />
+                <img src="assets/foto%20schede/pistachio%20hot.png" alt="Pistachio hot" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Bevanda calda al pistacchio: cremosa, profumata, finitura curata. Temperatura controllata per preservare sapore.</p>
+            <ul class="stat-list">
+              <li>Temperatura servizio: 65°C</li>
+              <li>Texture: liscia e densa</li>
+              <li>Top: panna/drizzle se previsto</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Scalda la base fino a 65°C.</span>
+                <span>2 · Aggiungi pistacchio e omogeneizza (no striature casuali).</span>
+                <span>3 · Rifinisci e servi con spoon.</span>
+              </div>
+              <div class="tips">Usa strumenti dedicati (allergeni). La differenza la fa la pulizia del bordo tazza.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Tea service</span>
+              <span class="tag">Milk on side</span>
+            </div>
+            <h3>Tea</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/foto%20schede/tea.png" type="image/png" />
+                <img src="assets/foto%20schede/tea.png" alt="Tea" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Tè in foglia o in bustina infuso in acqua bollente; latte a parte per English Breakfast.</p>
+            <ul class="stat-list">
+              <li>Tazza: 12 oz</li>
+              <li>Riscaldamento acqua: da bollitore o fontana, versata da bricco</li>
+              <li>Spazio di sicurezza: lascia 2 cm dalla sommità della tazza per evitare trabocchi</li>
+              <li>Infusione: Black tea 3-5 min, Green tea 2-3 min, Herbal 5-7 min</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Step & tips</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 · Inserisci il filtro scelto.</span>
+                <span>2 · Versa acqua calda lasciando spazio.</span>
+                <span>3 · Servi latte su richiesta e ricorda di offrire "white tea" standard.</span>
+              </div>
+              <div class="tips">Per top-up usare bricco metallico, non la fontana diretta.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">💰 Upselling</strong>
+                <span><strong>Pastry pairing:</strong> "Scone con clotted cream si abbina perfetto al tè"</span>
+                <span><strong>Honey:</strong> "Miele biologico invece di zucchero?"</span>
+                <span><strong>Iced version:</strong> "Fa caldo? Posso farlo freddo con ghiaccio"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">🛠️ Pro tip:</strong> Tempi infusione: Black tea 3-5min, Green 2-3min, Herbal 5-7min. Acqua 90-95°C (non bollente = brucia foglie). Latte SEMPRE a parte, mai nel tè.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">☕</div>
+        <h3 class="footer-title">Caffè Rituals</h3>
+        <p class="footer-tagline">L'arte dell'espresso perfetto</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">18 Prodotti</span>
+            <span class="stat-label">Prodotti</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Listino locale</span>
+            <span class="stat-label">Range</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Tutto l'anno Stagione</span>
+            <span class="stat-label">Stagione</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

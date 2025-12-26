@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Festive - Badiani</title>
+    <link rel="stylesheet" href="styles/site.css" />
+    <script defer src="scripts/site.js?v=20251225_3"></script>
+  </head>
+  <body data-product="festive">
+    <main>
+      <nav class="nav-shell">
+        <a class="brand" href="index.html" aria-label="Torna alla home Badiani">
+          <img src="assets/logo-badiani.jpg" data-default-src="assets/logo-badiani.jpg" data-alt-src="assets/logo-b-blue.png" alt="Badiani logo" class="brand-avatar" />
+          <div class="brand-text">
+            <small>Training</small>
+          </div>
+        </a>
+        <div class="user-nickname-bar" id="user-nickname-bar" style="margin-left:auto; font-weight:600; color:#214098; font-size:1.1em; display:none; align-items:center; gap:0.5em;">
+          <span style="font-size:1.2em;">👤</span>
+          <span id="nickname-display"></span>
+        </div>
+        <button class="menu-trigger" type="button" data-menu-toggle aria-expanded="false" aria-controls="nav-panel">
+          Menu
+          <span class="menu-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="menu-drawer" data-menu-drawer aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-drawer-title">
+      <div class="menu-drawer__overlay" data-menu-close></div>
+      <div class="menu-drawer__panel">
+        <header class="menu-drawer__header">
+          <div>
+            <h2 id="menu-drawer-title" class="menu-drawer__title">Categorie</h2>
+            <p class="menu-drawer__mood" data-menu-mood>Brilla: i dettagli fanno la differenza.</p>
+          </div>
+          <button type="button" class="menu-drawer__close" data-menu-close aria-label="Chiudi menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </header>
+        <div class="menu-search">
+          <div class="menu-search__field">
+            <input type="search" placeholder="Cerca prodotto o modulo" data-menu-search />
+          </div>
+          <div class="menu-search__suggestions" data-menu-suggestions></div>
+        </div>
+        <nav class="menu-drawer__nav">
+          <ul class="menu-categories">
+            <li><a href="story-orbit.html">Story Orbit</a></li>
+            <li><a href="caffe.html">Caffe' Rituals</a></li>
+            <li><a href="sweet-treats.html">Sweet Treat Atelier</a></li>
+            <li><a href="pastries.html">Pastry Lab</a></li>
+            <li><a href="slitti-yoyo.html">Slitti & Yo-Yo</a></li>
+            <li><a href="gelato-lab.html">Gelato Lab</a></li>
+            <li><a href="festive.html">Festive & Churros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="content-area">
+      <section class="hero">
+        <div class="hero-card">
+          <div class="badge">
+            <span>Linea Festiva</span>
+            <span class="page-stars" data-page-stars>? Stelle: 10/10</span>
+          </div>
+          <h1>Churros, Panettoni & Vin Brule'</h1>
+          <p>
+            Procedura ufficiale per i prodotti delle feste: frittura churros, servizio Panettone/Pandoro con upsell
+            Buontalenti, mini gift e gestione mulled wine.
+          </p>
+          
+        </div>
+        <div class="hero-card visual">
+          <picture>
+            <source srcset="assets/churro-cover.webp" type="image/webp" />
+            <img src="assets/churro-cover.webp" alt="Churros con salsa" loading="lazy" />
+          </picture>
+        </div>
+      </section>
+
+      <section class="carousel" data-carousel="festive">
+        <header class="carousel-header" data-carousel-header>
+          <div class="carousel-header__title-block">
+            <h2 class="carousel-title" data-carousel-title>Churros, Panettoni & Vin Brule'</h2>
+            <span class="carousel-category" data-carousel-category>Linea Festiva</span>
+          </div>
+          <div class="carousel-indicators" data-carousel-indicators></div>
+        </header>
+
+        <div class="carousel-track" data-carousel-track>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Fryer 190 °C</span>
+              <span class="tag">8 pezzi/porzione</span>
+            </div>
+            <h3>Cottura perfetta</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-churros.webp" type="image/webp" />
+                <img src="assets/festive-churros.webp" alt="Churros appena fritti" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Utilizza il cestello friggitrice e un mix zucchero/cannella (600 g + 20 g).</p>
+            <button class="btn-ghost" data-toggle-card>Steps</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Prepara il mix zucchero/cannella in una teglia larga.</span>
+                <span>2 - Preleva 8 churros dal freezer, friggi 8-9 min finche' dorati.</span>
+                <span>3 - Scola bene l'olio e passa i churros nel mix per una copertura uniforme.</span>
+              </div>
+              <div class="tips">Controlla costantemente i tempi per evitare centro crudo; sostituisci l'olio quando scurisce.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Batch doppio:</strong> "Vuoi 16 churros per condividere?"</span>
+                <span><strong>Combo salse:</strong> "Prova il mix pistacchio + cioccolato fondente"</span>
+                <span><strong>Bundle:</strong> "Churros + cioccolata calda = combo perfetta"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Temperatura olio critica: 190 °C esatti. Piu' bassa = unto, piu' alta = bruciato esterno/crudo interno. Sostituisci olio ogni 40 porzioni o quando scurisce.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Plating</span>
+              <span class="tag">Sauce 1oz</span>
+            </div>
+            <h3>Impiattamento & upsell</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-churro-plate.webp" type="image/webp" />
+                <img src="assets/festive-churro-plate.webp" alt="Churros impiattati con salsa" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Presentazione e servizio dei churros: disponi gli 8 pezzi nel box dedicato con salsa posizionata a destra per accesso facile.</p>
+            <ul class="stat-list">
+              <li>Porzione: 8 churros per ordine</li>
+              <li>Salsa: 1 oz in cup dedicata (a scelta: salsa Bruna, Pistacchio, etc.)</li>
+              <li>Contenitore: box dedicato Badiani per mantener<li>Tempi di servizio: consegna entro 1 minuto dalla frittura per mantenere calore e croccantezza</li>
+              <li>Abbinamenti suggeriti: cioccolata calda oppure Slitti toppings</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Script servizio</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - "Vuoi aggiungere panna o una seconda salsa?"</span>
+                <span>2 - Sigilla il contenitore per delivery entro 1 minuto dalla frittura.</span>
+                <span>3 - Consegnalo con tovagliolo brandizzato.</span>
+              </div>
+              <div class="tips">Mantieni porzioni sempre da 8 pezzi per coerenza audit.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Aggiungi panna montata fresca sopra i churros?"</span>
+                <span><strong>Opzione 2:</strong> "Vuoi una seconda salsa per variare il gusto?"</span>
+                <span><strong>Opzione 3:</strong> "Con bevanda calda diventa merenda completa"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Servi immediatamente dopo inzucchero per mantenere croccantezza. Per delivery, sigilla entro 1 minuto. Porzioni sempre da 8 pezzi per standard audit.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Slice service</span>
+              <span class="tag">8 porzioni</span>
+            </div>
+            <h3>Taglio & presentazione</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/panettone.webp" type="image/webp" />
+                <img src="assets/panettone.webp" alt="Panettone al taglio" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Panettone tagliato in 8 spicchi uniformi seguendo la guida. Usa sempre coltello seghettato lungo per evitare di sbriciolare.
+              Presenta la fetta su piatto dessert con cutlery e proponi subito upsell (gelato Buontalenti + sauce).
+            </p>
+            <ul class="stat-list">
+              <li>Taglio: verticale seguendo le 8 linee guida, coltello seghettato lungo</li>
+              <li>Porzioni: 8 spicchi uniformi per coerenza</li>
+              <li>Presentazione: piatto dessert + cutlery sempre</li>
+              <li>Campione visivo: tieni una fetta visibile al banco per stimolare ordini (storytelling visivo)</li>
+              <li>Abbinamenti suggeriti: gelato Buontalenti, salsa pistacchio, cioccolata calda</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Taglia verticale seguendo le linee guida.</span>
+                <span>2 - Disponi sul piatto con cutlery.</span>
+                <span>3 - Offri subito upsell: scoop Buontalenti + sauce o hot chocolate.</span>
+              </div>
+              <div class="tips">Campiona una delle 8 fette per storytelling e conversione vendite.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Fetta + scoop Buontalenti e' il nostro abbinamento signature"</span>
+                <span><strong>Opzione 2:</strong> "Aggiungi salsa pistacchio per contrasto perfetto?"</span>
+                <span><strong>Opzione 3:</strong> "Con cioccolata calda diventa un momento di pura indulgenza"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Usa coltello seghettato lungo per taglio netto senza sbriciolare. 8 spicchi uniformi seguendo guida. Esponi fetta campione per stimolare ordini visivi.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Warm option</span>
+              <span class="tag">Crepe plate</span>
+            </div>
+            <h3>Slice calda</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-panettone-warm-slice.webp" type="image/webp" />
+                <img src="assets/festive-panettone-warm-slice.webp" alt="Fetta di panettone" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Panettone scaldato: la variante tiepida crea contrasto incredibile con gelato freddo. 10 secondi per lato sulla piastra crepe, senza olio.
+              Servi subito per mantenere la texture croccante fuori e morbida dentro. Il profumo attira gli altri clienti!
+            </p>
+            <ul class="stat-list">
+              <li>Piastra crepe: pulita e asciutta (no olio)</li>
+              <li>Timing: 10 secondi per lato esatti (non di piu' o perde croccantezza)</li>
+              <li>Servizio immediato: servi subito dopo cottura</li>
+              <li>Abbinamenti: Dark Chocolate + salsa pistacchio (contrasto gourmet)</li>
+              <li>Upsell: gelato freddo + panettone caldo = contrasto di temperatura sensazionale</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Steps</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Posiziona la fetta sulla piastra crepe.</span>
+                <span>2 - Tosta 10 secondi per lato (no olio).</span>
+                <span>3 - Servi con sauce e Buontalenti se richiesto.</span>
+              </div>
+              <div class="tips">La versione Dark Chocolate si abbina con sauce Pistacchio per contrasti.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Versione calda con gelato freddo = contrasto incredibile"</span>
+                <span><strong>Opzione 2:</strong> "Dark Chocolate + sauce pistacchio? Abbinamento gourmet"</span>
+                <span><strong>Opzione 3:</strong> "Proponi sempre opzione tiepida per esperienza premium"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Piastra crepe pulita e asciutta. 10 secondi per lato, no olio. Servi immediatamente per mantenere croccante fuori/morbido dentro. Profumo attira altri clienti.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item data-reward-id="festive-piatto-classico-5">
+            <div class="tag-row">
+              <span class="tag">Powder sugar</span>
+            </div>
+            <h3>Piatto classico</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/pandoro.webp" type="image/webp" />
+                <img src="assets/pandoro.webp" alt="Fetta di pandoro con zucchero a velo" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Pandoro a stella: la forma a 8 punte e' iconica e bellissima al banco. Taglia spicchi uniformi e spolvera zucchero a velo AL MOMENTO del servizio.
+              Racconti al cliente il processo di lievitazione naturale (36 ore) per giustificare il valore premium.
+            </p>
+            <ul class="stat-list">
+              <li><strong>Taglio:</strong> seguendo la guida a stella per 8 spicchi uniformi (effetto presentazione professionale)</li>
+              <li><strong>Zucchero a velo:</strong> SEMPRE al momento del servizio, non prima (effetto neve fresca visivamente)</li>
+              <li><strong>Piatto dessert + cutlery:</strong> sempre</li>
+              <li><strong>Temperatura:</strong> ambiente per massimo profumo</li>
+              <li><strong>Storytelling:</strong> "Lievitazione 36 ore con ingredienti premium" (giustifica valore)</li>
+              <li><strong>Abbinamenti suggeriti:</strong> gelato Buontalenti, salsa mascarpone o pistacchio</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Steps</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Taglia seguendo la guida (A) per ottenere spicchi regolari.</span>
+                <span>2 - Disponi su piatto con cutlery.</span>
+                <span>3 - Spolvera zucchero a velo e proponi scoop Buontalenti + sauce pistacchio.</span>
+              </div>
+              <div class="tips">Racconta il metodo di lievitazione naturale per valore percepito.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Pandoro + Buontalenti = tradizione + innovazione"</span>
+                <span><strong>Opzione 2:</strong> "Salsa mascarpone o pistacchio per twist gourmet?"</span>
+                <span><strong>Opzione 3:</strong> "Racconta lievitazione 36 ore per giustificare valore"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Spolvera zucchero a velo AL MOMENTO del servizio per effetto neve fresca. Taglia spicchi uniformi stella a 8 punte. Temperatura ambiente per massimo profumo.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--product" data-carousel-item data-reward-id="festive-opzione-calda-6">
+            <div class="tag-row">
+              <span class="tag">Warm slice</span>
+              <span class="tag">10'' x lato</span>
+            </div>
+            <h3>Opzione calda</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-pandoro-warm.webp" type="image/webp" />
+                <img src="assets/festive-pandoro-warm.webp" alt="Pandoro tostato" loading="lazy" />
+              </picture>
+            </figure>
+            <p>
+              Pandoro scaldato: stessa tecnica del panettone. 10 secondi per lato sulla piastra crepe (senza olio). Toasta leggero per ravvivare la struttura.
+              Servi immediatamente con pairing consigliato (crema mascarpone tiepida, gelato, sauce).
+            </p>
+            <ul class="stat-list">
+              <li><strong>Chiedi preferenza al cliente:</strong> "Vuoi la versione tiepida?"</li>
+              <li><strong>Piastra crepe:</strong> pulita e asciutta, no olio</li>
+              <li><strong>Timing:</strong> 10 secondi per lato (non di piu')</li>
+              <li><strong>Servizio immediato:</strong> impiatta subito per mantenere volume e calore</li>
+              <li><strong>Campioni:</strong> tieni piccoli triangoli per assaggiare durante le ore di punta (storytelling)</li>
+              <li><strong>Abbinamenti tiepidi:</strong> crema mascarpone calda, gelato freddo (contrasto), salsa cioccolato</li>
+            </ul>
+            <button class="btn-ghost" data-toggle-card>Checklist</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Chiedi preferenza al cliente.</span>
+                <span>2 - Tosta e impiatta rapidamente per non perdere volume.</span>
+                <span>3 - Servi con pairing consigliato.</span>
+              </div>
+              <div class="tips">Campiona piccoli triangoli per raccontare prodotto nelle ore di traffico.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi la versione calda con gelato? Esperienza premium"</span>
+                <span><strong>Opzione 2:</strong> "Aggiungiamo crema mascarpone tiepida?"</span>
+                <span><strong>Opzione 3:</strong> "Chiedi SEMPRE preferenza calda/fredda per guidare upsell"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> 10 secondi per lato esatti, no di piu' o si secca. Impiatta veloce per non perdere volume soffice. Campiona triangolini nelle ore punta per stimolare ordini.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--product" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">In-store</span>
+              <span class="tag">Gloves</span>
+            </div>
+            <h3>Mini panettone con Buontalenti</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-mini-pan.webp" type="image/webp" />
+                <img src="assets/festive-mini-pan.webp" alt="Mini panettoni Badiani" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Utilizza guanti, rimuovi la carta e servi con cup sauce e cutlery.</p>
+            <button class="btn-ghost" data-toggle-card>Steps</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Preleva dal vertical freezer e togli l'incarto.</span>
+                <span>2 - Posiziona su piattino, riempi cup espresso a 1/3 con sauce scelta.</span>
+                <span>3 - Suggerisci di tagliare a meta' e versare la sauce sopra.</span>
+              </div>
+              <div class="tips">Aggiungi mini spoon o forchettina per esperienza premium.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi raddoppiare con un secondo mini + salsa diversa?"</span>
+                <span><strong>Opzione 2:</strong> "Abbinamento perfetto: mini + espresso double shot"</span>
+                <span><strong>Opzione 3:</strong> "Box da 3 mini misti per regalo (secondo listino locale)"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Usa sempre guanti per manipolare. Rimuovi carta delicatamente per non rompere. Cup espresso riempita 1/3 = porzione perfetta sauce. Mini posate = tocco premium.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--procedure" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Delivery</span>
+              <span class="tag">Treat box</span>
+            </div>
+            <h3>Packaging take away</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-delivery.webp" type="image/webp" />
+                <img src="assets/festive-delivery.webp" alt="Packaging delivery panettoni" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Per due panettoni: una sauce pot riempita 3/4, quattro angoli del treat box.</p>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Inserisci sauce pot al centro, blocca i panettoni agli angoli.</span>
+                <span>2 - Chiudi con lid + tape, etichetta shelf life.</span>
+                <span>3 - Conserva in freezer finche' il rider arriva.</span>
+              </div>
+              <div class="tips">Comunica al cliente autonomia termica e modalita' di servizio.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Box da 4 mini invece di 2? Perfetto per famiglia"</span>
+                <span><strong>Opzione 2:</strong> "Aggiungiamo doppia salsa per variare gusti?"</span>
+                <span><strong>Opzione 3:</strong> "Con biglietto auguri brandizzato diventa regalo perfetto"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Sauce pot al centro per stabilita'. Blocca mini negli angoli. Etichetta shelf life e istruzioni servizio. Conserva in freezer fino consegna rider per mantenere qualita'.</div>
+            </div>
+          </article>
+          <article class="guide-card guide-card--procedure" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Setup</span>
+              <span class="tag">600 ml acqua</span>
+            </div>
+            <h3>Allestimento macchina</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-mulled-setup.webp" type="image/webp" />
+                <img src="assets/festive-mulled-setup.webp" alt="Setup macchina per vin brule'" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Riempire tank esterno con 600 ml d'acqua senza superare il max, inserire contenitore interno.</p>
+            <button class="btn-ghost" data-toggle-card>Procedura</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Versa 500/1000 ml di mix nel tank argento.</span>
+                <span>2 - Porta temperatura a livello 10 per 25-30 min; poi mantieni a 6-7.</span>
+                <span>3 - Usa il coperchio durante il mantenimento per evitare evaporazione.</span>
+              </div>
+              <div class="tips">Meglio scaldare piccoli lotti per garantire freschezza e aromi.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Visual appeal:</strong> "Setup macchina in area visibile per attirare ordini"</span>
+                <span><strong>Sampling:</strong> "Offri mini assaggi nelle ore punta per conversione"</span>
+                <span><strong>Bundle:</strong> "Mulled wine + mini panettone = combo festiva perfetta"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Tank esterno: 600ml acqua max. Livello 10 per 25-30 min riscaldamento, poi 6-7 mantenimento. Piccoli batch = freschezza. Coperchio evita evaporazione aromi.</div>
+            </div>
+          </article>
+
+          <article class="guide-card guide-card--maintenance" data-carousel-item>
+            <div class="tag-row">
+              <span class="tag">Servizio</span>
+              <span class="tag">3 giorni shelf life</span>
+            </div>
+            <h3>Service & chiusura</h3>
+            <figure class="guide-media">
+              <picture>
+                <source srcset="assets/festive-mulled-service.webp" type="image/webp" />
+                <img src="assets/festive-mulled-service.webp" alt="Servizio vin brule'" loading="lazy" />
+              </picture>
+            </figure>
+            <p>Servi con mestolo, fetta d'arancia e controllo shelf life.</p>
+            <button class="btn-ghost" data-toggle-card>Steps</button>
+            <div class="details">
+              <div class="steps">
+                <span>1 - Riempire cup con mestolo, aggiungere fetta d'arancia.</span>
+                <span>2 - A fine giornata travasa nel bricco, lascia raffreddare e copri con pellicola.</span>
+                <span>3 - Frigo + label (3 giorni dal primo warm-up; 30 giorni per mix non aperto).</span>
+              </div>
+              <div class="tips">Pulire tank, contenitore e esterno macchina ogni sera con acqua calda e detergente.</div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="steps">
+                <strong style="color: var(--brand-gold); display: block; margin-bottom: 8px;">?? Upselling</strong>
+                <span><strong>Opzione 1:</strong> "Vuoi aggiungere shot di rum per versione adulta?"</span>
+                <span><strong>Opzione 2:</strong> "Fetta d'arancia fresca + cannella stick = presentazione Instagram"</span>
+                <span><strong>Opzione 3:</strong> "Racconta spezie natalizie e tradizione per valore percepito"</span>
+              </div>
+              <hr style="margin: 12px 0; border: none; border-top: 1px dashed rgba(33, 64, 152, 0.2);">
+              <div class="tips"><strong style="color: var(--brand-rose);">??? Pro tip:</strong> Servi con mestolo dedicato. Fetta arancia fresca sempre. Shelf life: 3 giorni da primo riscaldamento, 30 giorni mix chiuso. Pulizia tank ogni sera con acqua calda.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="category-footer">
+        <div class="footer-icon">🎉</div>
+        <h3 class="footer-title">Linea Festiva</h3>
+        <p class="footer-tagline">Tradizione e calore nelle feste</p>
+        <div class="footer-stats">
+          <div class="footer-stat">
+            <span class="stat-value">10</span>
+            <span class="stat-label">Prodotti</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Listino locale</span>
+            <span class="stat-label">Range</span>
+          </div>
+          <div class="footer-stat">
+            <span class="stat-value">Nov-Gen</span>
+            <span class="stat-label">Stagione</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
