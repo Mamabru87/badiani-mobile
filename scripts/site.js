@@ -1225,37 +1225,85 @@ const gamification = (() => {
   const storyOrbitStepCardId = (stepKey) => `story-orbit-step-${String(stepKey || 'step')}-1`;
 
   let audioContext = null;
+
+  const playTabOpenSound = () => {
+    try {
+      const AudioCtor = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtor) return;
+
+      if (!audioContext) {
+        audioContext = new AudioCtor();
+      }
+      if (audioContext.state === 'suspended') {
+        audioContext.resume().catch(() => {});
+      }
+      
+      const now = audioContext.currentTime;
+      const osc = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      
+      osc.connect(gain);
+      gain.connect(audioContext.destination);
+      
+      // "Cute" UI Pop: Triangle wave for more presence
+      osc.type = 'triangle';
+      
+      // Pitch envelope: Quick rise (chirp)
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.exponentialRampToValueAtTime(880, now + 0.1);
+      
+      // Volume envelope: Fast attack, fast decay
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(0.3, now + 0.02); // Louder attack
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15);
+      
+      osc.start(now);
+      osc.stop(now + 0.15);
+    } catch (e) {}
+  };
+
   const playStarChime = (level = 1) => {
     try {
       if (!audioContext) {
         audioContext = new (window.AudioContext || window.webkitAudioContext)();
       }
+      if (audioContext.state === 'suspended') audioContext.resume();
+
       const now = audioContext.currentTime;
-      const oscillator = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
-      oscillator.connect(gainNode);
-      gainNode.connect(audioContext.destination);
+      const masterGain = audioContext.createGain();
+      masterGain.connect(audioContext.destination);
+      masterGain.gain.value = 0.15;
+
+      // Nintendo-style "Get Item" fanfare (Square waves)
+      // Arpeggio: C5, E5, G5, C6
+      const notes = [523.25, 659.25, 783.99, 1046.50]; 
       
-      // Note di piano crescenti: DO (261.63Hz), MI (329.63Hz), SOL (392Hz), DO alto (523.25Hz)
-      const pianoNotes = {
-        1: 261.63,  // DO (C4) - prima stella
-        2: 329.63,  // MI (E4) - seconda stella  
-        3: 392.00,  // SOL (G4) - terza stella
-        4: 523.25   // DO alto (C5) - quiz
-      };
+      notes.forEach((freq, i) => {
+        const osc = audioContext.createOscillator();
+        osc.type = 'square'; 
+        osc.frequency.value = freq;
+        osc.connect(masterGain);
+        
+        const start = now + (i * 0.08);
+        const dur = 0.1;
+        
+        osc.start(start);
+        osc.stop(start + dur);
+      });
       
-      const frequency = pianoNotes[level] || pianoNotes[1];
-      oscillator.frequency.setValueAtTime(frequency, now);
-      oscillator.type = 'sine';
+      // Final sustain note
+      const finalOsc = audioContext.createOscillator();
+      finalOsc.type = 'triangle';
+      finalOsc.frequency.value = 1046.50; // C6
+      finalOsc.connect(masterGain);
+      finalOsc.start(now + 0.32);
+      finalOsc.stop(now + 0.8);
       
-      // Envelope tipo piano: attacco rapido, sustain, release
-      gainNode.gain.setValueAtTime(0, now);
-      gainNode.gain.linearRampToValueAtTime(0.12, now + 0.01); // Attacco rapido
-      gainNode.gain.linearRampToValueAtTime(0.08, now + 0.05); // Sustain
-      gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3); // Release
-      
-      oscillator.start(now);
-      oscillator.stop(now + 0.3);
+      // Envelope
+      masterGain.gain.setValueAtTime(0.15, now);
+      masterGain.gain.setValueAtTime(0.15, now + 0.4);
+      masterGain.gain.exponentialRampToValueAtTime(0.01, now + 0.8);
+
     } catch (error) {
       console.warn('Audio playback not available', error);
     }
@@ -4682,6 +4730,10 @@ const gamification = (() => {
     const startY = origin.y;
     const endX = rectEnd.left + rectEnd.width / 2;
     const endY = rectEnd.top + rectEnd.height / 2;
+    
+    // Center of viewport for the "Big Float"
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
 
     const star = document.createElement('span');
     star.className = 'star-flight';
@@ -4692,33 +4744,47 @@ const gamification = (() => {
     star.textContent = icon;
     getFxLayer().appendChild(star);
 
-    for (let i = 0; i < 5; i++) {
-      const sparkle = document.createElement('span');
-      sparkle.className = 'star-sparkle';
-      sparkle.textContent = '✨';
-      getFxLayer().appendChild(sparkle);
-      const angle = (Math.PI * 2 * i) / 5 + Math.random() * 0.3;
-      const distance = 40 + Math.random() * 30;
-      const offsetX = Math.cos(angle) * distance;
-      const offsetY = Math.sin(angle) * distance - 50;
-      sparkle.animate(
-        [
-          { left: `${startX}px`, top: `${startY}px`, transform: 'translate(-50%, -50%) scale(0.2)', opacity: 0 },
-          { left: `${startX}px`, top: `${startY}px`, transform: 'translate(-50%, -50%) scale(0.8)', opacity: 1, offset: 0.2 },
-          { left: `${startX + offsetX}px`, top: `${startY + offsetY}px`, transform: 'translate(-50%, -50%) scale(0.3)', opacity: 0 },
-        ],
-        { duration: 1000 + Math.random() * 300, easing: 'ease-out', fill: 'forwards' }
-      ).onfinish = () => sparkle.remove();
-    }
+    // Animation Sequence:
+    // 1. Pop from origin to Center (Fast)
+    // 2. Float Big in Center (Pause/Rotate)
+    // 3. Fly to Destination (Fast)
+    const keyframes = [
+      // Start at origin
+      { left: `${startX}px`, top: `${startY}px`, transform: 'translate(-50%, -50%) scale(0.5)', opacity: 0, offset: 0 },
+      
+      // Move to center and grow BIG
+      { left: `${centerX}px`, top: `${centerY}px`, transform: 'translate(-50%, -50%) scale(5) rotate(0deg)', opacity: 1, offset: 0.2 },
+      
+      // Float/Rotate in center
+      { left: `${centerX}px`, top: `${centerY}px`, transform: 'translate(-50%, -50%) scale(5.5) rotate(20deg)', opacity: 1, offset: 0.6 },
+      
+      // Fly to end
+      { left: `${endX}px`, top: `${endY}px`, transform: 'translate(-50%, -50%) scale(1)', opacity: 0, offset: 1 }
+    ];
 
     star.animate(
-      [
-        { left: `${startX}px`, top: `${startY}px`, transform: 'translate(-50%, -50%) scale(${celebrateSet ? 0.8 : 0.4})', opacity: 0 },
-        { left: `${startX}px`, top: `${startY}px`, transform: 'translate(-50%, -50%) scale(1.2)', opacity: 1 },
-        { left: `${endX}px`, top: `${endY}px`, transform: 'translate(-50%, -50%) scale(0.6)', opacity: 0 },
-      ],
-      { duration: 1100, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', fill: 'forwards' }
+      keyframes,
+      { duration: 1500, easing: 'ease-in-out', fill: 'forwards' }
     ).onfinish = () => star.remove();
+
+    // Add extra sparkles during the "Big" phase
+    setTimeout(() => {
+      for (let i = 0; i < 8; i++) {
+        const sparkle = document.createElement('span');
+        sparkle.className = 'star-sparkle';
+        sparkle.textContent = '✨';
+        getFxLayer().appendChild(sparkle);
+        const angle = (Math.PI * 2 * i) / 8;
+        const dist = 120;
+        const tx = Math.cos(angle) * dist;
+        const ty = Math.sin(angle) * dist;
+        
+        sparkle.animate([
+          { left: `${centerX}px`, top: `${centerY}px`, transform: 'translate(-50%, -50%) scale(0)', opacity: 1 },
+          { left: `${centerX + tx}px`, top: `${centerY + ty}px`, transform: 'translate(-50%, -50%) scale(1.5)', opacity: 0 }
+        ], { duration: 600, easing: 'ease-out' }).onfinish = () => sparkle.remove();
+      }
+    }, 300);
   }
 
   function playBonusAnimation() {
@@ -6666,6 +6732,7 @@ toggles.forEach((button) => {
 
           // Accordion behavior: only one tab open at a time.
           if (willExpand) {
+            try { playTabOpenSound(); } catch (e) {}
             try {
               accordion.querySelectorAll('.accordion-item.is-open').forEach((openItem) => {
                 if (openItem === item) return;
