@@ -136,9 +136,11 @@
     .cockpit-track {
       display: flex !important;
       flex-direction: row !important;
-      /* Dynamic padding: Left is standard (24px) to start content immediately. 
-         Right is calculated to allow the last card to be centered. */
-      padding: 20px max(24px, calc(50vw - 140px)) 20px 24px !important;
+      /* Dynamic padding: 
+         Left: 24px (Standard) -> Starts content aligned left.
+         Right: calc(50vw - 110px) -> Ensures last card (280px) can reach center + 30px safety buffer for scaling.
+      */
+      padding: 20px max(24px, calc(50vw - 110px)) 20px 24px !important;
       gap: 16px !important;
       overflow-x: auto !important;
       scroll-snap-type: x mandatory;
